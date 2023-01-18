@@ -27,7 +27,7 @@ const Header = () => {
     setMenuAnchor(null);
   };
   return (
-    <AppBar component="nav" elevation="0">
+    <AppBar component="nav" elevation="0" color="transparent">
       <Container maxWidth={"xl"}>
         <Toolbar sx={{ justifyContent: "space-between" }}>
           <Typography variant="h5">DortVille</Typography>

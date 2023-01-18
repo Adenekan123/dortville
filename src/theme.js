@@ -8,8 +8,17 @@ export const theme = createTheme({
     secondary: {
       main: "#31AD5D",
     },
+    warning: {
+      main: "#ff9800",
+    },
     tertiary: {
       main: "#333",
+    },
+  },
+  typography: {
+    h1: {
+      fontSize: "4rem",
+      fontWeight: 700,
     },
   },
 });

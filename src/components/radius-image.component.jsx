@@ -5,13 +5,13 @@ const RadiusImage = ({ src }) => {
   return (
     <Box
       sx={{
-        borderTopLeftRadius: "40%",
-        borderTopRightRadius: "40%",
+        borderTopLeftRadius: "30%",
+        borderTopRightRadius: "30%",
         borderBottomLeftRadius: "50%",
         borderBottomRightRadius: "50px",
         overflow: "hidden",
-        height: "120%",
-        width: "90%",
+        height: "500px",
+        width: "80%",
         margin: "0 auto",
       }}>
       <img
@@ -19,7 +19,7 @@ const RadiusImage = ({ src }) => {
         alt={"radius"}
         width="100%"
         height="100%"
-        style={{ objectFit: "cover" }}
+        style={{ objectFit: "cover", objectPosition: "center" }}
       />
     </Box>
   );
