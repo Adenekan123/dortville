@@ -1,7 +1,7 @@
 import React from "react";
 import { Box } from "@mui/material";
 
-const RadiusImage = ({ src }) => {
+const RadiusImage = ({ src, poster }) => {
   return (
     <Box
       sx={{
@@ -12,10 +12,14 @@ const RadiusImage = ({ src }) => {
         overflow: "hidden",
         height: "500px",
         width: "80%",
-        margin: "0 auto",
+        marginLeft: "auto",
       }}>
-      <img
+      <video
         src={src}
+        poster={poster}
+        loop
+        autoPlay
+        muted
         alt={"radius"}
         width="100%"
         height="100%"

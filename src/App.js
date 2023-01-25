@@ -3,13 +3,11 @@ import { theme } from "./theme.js";
 
 import { Box } from "@mui/material";
 
-import Header from "./components/common/header.component.jsx";
-import Banner from "./components/banner.component.jsx";
+import Home from "./pages/home.component.jsx";
 function App() {
   return (
     <ThemeProvider theme={theme}>
-      <Header />
-      <Banner />
+      <Home />
     </ThemeProvider>
   );
 }

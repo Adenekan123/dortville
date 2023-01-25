@@ -6,19 +6,22 @@ export const theme = createTheme({
       main: "#fff",
     },
     secondary: {
-      main: "#31AD5D",
+      main: "#313dad",
     },
     warning: {
-      main: "#ff9800",
+      main: "#1eda05",
     },
     tertiary: {
-      main: "#333",
+      main: "#111",
     },
   },
   typography: {
     h1: {
       fontSize: "4rem",
       fontWeight: 700,
+    },
+    body2: {
+      lineHeight: 2,
     },
   },
 });
