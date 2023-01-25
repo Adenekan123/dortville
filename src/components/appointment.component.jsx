@@ -2,6 +2,7 @@ import React from "react";
 
 import {
   Box,
+  Paper,
   Grid,
   Button,
   TextField,
@@ -14,9 +15,14 @@ import { LocationOn, CalendarMonth, TimeToLeave } from "@mui/icons-material";
 const AppointMent = () => {
   return (
     <>
-      <Typography variant="h4" color="secondary" sx={{ mt: 8 }}>
-        Book An Appoint Now
-      </Typography>
+      <Paper
+        elevation={0}
+        sx={{ mt: { xs: 4, md: 8 }, backgroundColor: "transparent" }}>
+        <Typography variant="h4" color="secondary">
+          Book An Appoint Now
+        </Typography>
+      </Paper>
+
       <Box
         component={"form"}
         sx={{
