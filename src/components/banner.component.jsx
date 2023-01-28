@@ -37,7 +37,9 @@ const Banner = () => {
         alignItems="center"
         sx={{ position: "relative", zIndex: 1, px: { md: 8 } }}>
         <Grid item md={6}>
-          <Typography variant="h1" textTransform={"capitalize"}>
+          <Typography
+            sx={{ typography: { xs: "h2", md: "h1" } }}
+            textTransform={"capitalize"}>
             We are Dortville agricultuce
           </Typography>
           <Typography variant="h6" textTransform={"capitalize"} sx={{ mt: 2 }}>
@@ -53,7 +55,19 @@ const Banner = () => {
           <Box sx={{ position: "absolute", bottom: "50px", left: "80px" }}>
             <img src={verified} alt="verified-icon" height={"120px"} />
           </Box>
-          <RadiusImage src={bannerVideo} poster={bannerImage} />
+          <RadiusImage>
+            <video
+              src={bannerVideo}
+              poster={bannerImage}
+              loop
+              autoPlay
+              muted
+              alt={"radius"}
+              width="100%"
+              height="100%"
+              style={{ objectFit: "cover", objectPosition: "center" }}
+            />
+          </RadiusImage>
         </Grid>
       </Grid>
     </Container>

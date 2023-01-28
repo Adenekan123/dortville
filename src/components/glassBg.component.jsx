@@ -1,30 +1,34 @@
 import React from "react";
-import { Box } from "@mui/material";
+import { Paper, Box } from "@mui/material";
 
 const GlassBg = ({ children, src }) => {
   return (
-    <Box
+    <Paper
+      elevation={0}
       sx={{
-        p: 10,
-        position: "relative",
-        left: 0,
-        top: 0,
-        height: "300px",
-        background: `url(${src})`,
+        p: { xs: 2, md: 3 },
+        minHeight: { xs: "auto", md: "40vh" },
+        backgroundImage: `url(${src})`,
         backgroundPosition: "center",
         backgroundSize: "cover",
-        "&::before": {
-          content: '""',
-          position: "absolute",
-          left: 0,
-          top: 0,
-          width: "100%",
-          height: "100%",
-          backgroundColor: "#1615156d",
-        },
       }}>
-      {children}
-    </Box>
+      <Box
+        sx={{
+          height: { xs: "auto", md: "40vh" },
+          backgroundImage:
+            "linear-gradient(to right,rgba(0, 0, 255, 0.176),rgba(255,255,255,.05),rgba(113, 113, 255, 0.176))",
+          backdropFilter: "blur(5px)",
+          boxShadow: "0px 20px 25px rgba(0,0,0,5%)",
+          border: "1px solid #8881a0",
+          borderRadius: "20px",
+          p: 3,
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}>
+        {children}
+      </Box>
+    </Paper>
   );
 };
 

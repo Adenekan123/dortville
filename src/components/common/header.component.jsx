@@ -48,7 +48,10 @@ const Header = () => {
     };
   }, []);
   return (
-    <AppBar component="nav" elevation={0} color="transparent">
+    <AppBar
+      component="nav"
+      elevation={0}
+      sx={{ backgroundColor: "transparent" }}>
       <Toolbar
         sx={{
           justifyContent: "space-between",

@@ -18,8 +18,10 @@ const AppointMent = () => {
       <Paper
         elevation={0}
         sx={{ mt: { xs: 4, md: 8 }, backgroundColor: "transparent" }}>
-        <Typography variant="h4" color="secondary">
-          Book An Appoint Now
+        <Typography
+          color="secondary"
+          sx={{ typography: { xs: "h5", md: "h4" } }}>
+          Book An Appointment Now
         </Typography>
       </Paper>
 
