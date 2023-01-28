@@ -136,7 +136,13 @@ const Header = () => {
                 sx={{ mr: 3 }}>
                 Contact
               </Button>
-              <Button component={NavLink} to="/careers" color={"tertiary"}>
+              <Button
+                component={NavLink}
+                style={({ isActive }) =>
+                  isActive ? { color: "#313DAD" } : { color: "inherit" }
+                }
+                to="/careers"
+                color={"tertiary"}>
                 Careers
               </Button>
             </Box>
