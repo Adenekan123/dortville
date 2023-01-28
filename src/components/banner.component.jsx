@@ -40,7 +40,7 @@ const Banner = () => {
           <Typography
             sx={{ typography: { xs: "h2", md: "h1" } }}
             textTransform={"capitalize"}>
-            We are Dortville agricultuce
+            We are Dorfville agricultuce
           </Typography>
           <Typography variant="h6" textTransform={"capitalize"} sx={{ mt: 2 }}>
             We produce,process,supply and deliver Agricultural Produce.

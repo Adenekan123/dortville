@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { NavLink } from "react-router-dom";
 import {
   Box,
   AppBar,
@@ -12,7 +13,7 @@ import {
   useTheme,
 } from "@mui/material";
 
-import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
+// import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 
 import MenuDrawer from "./menuDrawer.component";
 
@@ -27,9 +28,9 @@ const Header = () => {
 
   const [menuAnchor, setMenuAnchor] = useState(null);
   const open = Boolean(menuAnchor);
-  const handleClick = (event) => {
-    setMenuAnchor(event.currentTarget);
-  };
+  // const handleClick = (event) => {
+  //   setMenuAnchor(event.currentTarget);
+  // };
 
   const handleClose = () => {
     setMenuAnchor(null);
@@ -71,7 +72,7 @@ const Header = () => {
               px: 12,
               py: 2,
               backgroundColor: navBg ? "#ffffffe1" : "transparent",
-              backdropFilter: "blur(5px)",
+              backdropFilter: navBg ? "blur(5px)" : "none",
             }}>
             <img
               src={logo}
@@ -80,10 +81,21 @@ const Header = () => {
               style={{ transition: ".2s " }}
             />
             <Box sx={{ width: "auto" }}>
-              <Button color={"tertiary"} sx={{ mr: 3 }}>
+              <Button
+                component={NavLink}
+                style={({ isActive }) =>
+                  isActive ? { color: "#313DAD" } : { color: "inherit" }
+                }
+                to="/"
+                sx={{ mr: 3 }}>
                 Home
               </Button>
-              <Button
+              {/* <Button
+                component={NavLink}
+                style={({ isActive }) =>
+                  isActive ? { color: "#313DAD" } : { color: "inherit" }
+                }
+                to="/services"
                 id="services-menu"
                 color={"tertiary"}
                 aria-controls={open ? "services-menu" : undefined}
@@ -93,14 +105,40 @@ const Header = () => {
                 sx={{ mr: 3 }}
                 endIcon={<KeyboardArrowDownIcon />}>
                 Services
-              </Button>
-              <Button color={"tertiary"} sx={{ mr: 3 }}>
+              </Button> */}
+              <Button
+                component={NavLink}
+                style={({ isActive }) =>
+                  isActive ? { color: "#313DAD" } : { color: "inherit" }
+                }
+                to="/about"
+                color={"tertiary"}
+                sx={{ mr: 3 }}>
                 About
               </Button>
-              <Button color={"tertiary"} sx={{ mr: 3 }}>
+              <Button
+                component={NavLink}
+                style={({ isActive }) =>
+                  isActive ? { color: "#313DAD" } : { color: "inherit" }
+                }
+                to="/services"
+                color={"tertiary"}
+                sx={{ mr: 3 }}>
+                Services
+              </Button>
+              <Button
+                component={NavLink}
+                style={({ isActive }) =>
+                  isActive ? { color: "#313DAD" } : { color: "inherit" }
+                }
+                to="/contact"
+                color={"tertiary"}
+                sx={{ mr: 3 }}>
                 Contact
               </Button>
-              <Button color={"tertiary"}>Careers</Button>
+              <Button component={NavLink} to="/careers" color={"tertiary"}>
+                Careers
+              </Button>
             </Box>
           </Stack>
         )}

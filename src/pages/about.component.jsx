@@ -1,6 +1,4 @@
 import React from "react";
-
-import Header from "../components/common/header.component";
 import BlogCard from "../components/blogCard.component";
 import {
   Container,
@@ -14,13 +12,11 @@ import {
 } from "@mui/material";
 
 import AppointMent from "../components/appointment.component";
-import GlassBg from "../components/glassBg.component";
 
 import about from "../assets/images/about.jpg";
 import about2 from "../assets/images/about2.jpg";
 import about3 from "../assets/images/about3.jpg";
 import about4 from "../assets/images/about4.jpg";
-import best from "../assets/images/banner-bg.jpg";
 import joinUsImage from "../assets/images/banner-bg4.jpg";
 import ourStoryImage from "../assets/images/banner-bg5.jpg";
 import crops from "../assets/images/crops.jpg";
@@ -33,7 +29,6 @@ import { ChevronRight } from "@mui/icons-material";
 const About = () => {
   return (
     <>
-      <Header />
       <Container
         sx={{
           position: "relative",
@@ -556,15 +551,6 @@ const About = () => {
             View all posts
           </Button>
         </Box>
-      </Paper>
-      <Paper
-        elevation={0}
-        sx={{
-          py: { xs: 0, md: 3 },
-          px: { xs: 0, md: 12 },
-          position: "relative",
-        }}>
-        <GlassBg src={best}></GlassBg>
       </Paper>
     </>
   );

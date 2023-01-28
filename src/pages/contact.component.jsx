@@ -1,6 +1,5 @@
 import React from "react";
 
-import Header from "../components/common/header.component";
 import { Container, Paper, Grid, Box, Typography } from "@mui/material";
 
 import AppointMent from "../components/appointment.component";
@@ -10,7 +9,6 @@ import { PhoneAndroid, Email } from "@mui/icons-material";
 const Contact = () => {
   return (
     <>
-      <Header />
       <Container
         sx={{
           position: "relative",

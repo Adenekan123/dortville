@@ -1,6 +1,4 @@
 import React from "react";
-
-import Header from "../components/common/header.component";
 import { Container, Button, Paper, Grid, Box, Typography } from "@mui/material";
 
 import farmer from "../assets//images/farmer.jpg";
@@ -8,7 +6,6 @@ import farmer from "../assets//images/farmer.jpg";
 const Careers = () => {
   return (
     <>
-      <Header />
       <Container
         sx={{
           position: "relative",

@@ -1,14 +1,7 @@
 import React, { useState, useEffect } from "react";
-
-import {
-  Box,
-  Drawer,
-  List,
-  ListItemButton,
-  ListItemText,
-  Collapse,
-} from "@mui/material";
-import { Menu, Add, Remove } from "@mui/icons-material";
+import { NavLink } from "react-router-dom";
+import { Box, Drawer, Button } from "@mui/material";
+import { Menu } from "@mui/icons-material";
 import logo from "../../assets/images/logo1.png";
 
 const MenuDrawer = () => {
@@ -18,7 +11,7 @@ const MenuDrawer = () => {
   const handleClose = () => setOpen(!open);
   const handleOpen = () => setOpen(!open);
 
-  const [openServices, setOpenServices] = useState(false);
+  // const [openServices, setOpenServices] = useState(false);
   const changeNavBg = () => {
     window.scrollY >= 100 ? setNavBg(true) : setNavBg(false);
   };
@@ -58,43 +51,75 @@ const MenuDrawer = () => {
             width: 300,
           },
         }}>
-        <List>
-          <ListItemButton>
-            <ListItemText primary="Home" />
-          </ListItemButton>
-          <ListItemButton onClick={() => setOpenServices(!openServices)}>
-            <ListItemText primary="Services" />
-            {openServices ? <Remove /> : <Add />}
-          </ListItemButton>
-          <Collapse in={openServices} timeout="auto" unmountOnExit>
-            <List component="div" disablePadding>
-              <ListItemButton sx={{ pl: 4 }}>
-                <ListItemText primary="Sales and supply of agricultural produce" />
-              </ListItemButton>
-              <ListItemButton sx={{ pl: 4 }}>
-                <ListItemText primary="Supply of Agricultural farm inputs and raw materials" />
-              </ListItemButton>
-              <ListItemButton sx={{ pl: 4 }}>
-                <ListItemText primary="Poultry Consultancy and Poultry Equipment" />
-              </ListItemButton>
-              <ListItemButton sx={{ pl: 4 }}>
-                <ListItemText primary="Animal Husbandry Management" />
-              </ListItemButton>
-              <ListItemButton sx={{ pl: 4 }}>
-                <ListItemText primary="Agricultural Training and Consultancy Services" />
-              </ListItemButton>
-            </List>
-          </Collapse>
-          <ListItemButton>
-            <ListItemText primary="About" />
-          </ListItemButton>
-          <ListItemButton>
-            <ListItemText primary="Contact" />
-          </ListItemButton>
-          <ListItemButton>
-            <ListItemText primary="Careers" />
-          </ListItemButton>
-        </List>
+        <Box sx={{ width: "auto", pt: 4 }}>
+          <Button
+            component={NavLink}
+            onClick={{ handleClose }}
+            style={({ isActive }) =>
+              isActive ? { color: "#313DAD" } : { color: "inherit" }
+            }
+            to="/"
+            sx={{ display: "block", px: 3, py: 1 }}>
+            Home
+          </Button>
+          {/* <Button
+                component={NavLink}
+                style={({ isActive }) =>
+                  isActive ? { color: "#313DAD" } : { color: "inherit" }
+                }
+                to="/services"
+                id="services-menu"
+                color={"tertiary"}
+                aria-controls={open ? "services-menu" : undefined}
+                aria-haspopup="true"
+                aria-expanded={open ? "true" : undefined}
+                onClick={handleClick}
+                sx={{ mr: 3 }}
+                endIcon={<KeyboardArrowDownIcon />}>
+                Services
+              </Button> */}
+          <Button
+            component={NavLink}
+            onClick={{ handleClose }}
+            style={({ isActive }) =>
+              isActive ? { color: "#313DAD" } : { color: "inherit" }
+            }
+            to="/about"
+            color={"tertiary"}
+            sx={{ display: "block", px: 3, py: 1 }}>
+            About
+          </Button>
+          <Button
+            onClick={{ handleClose }}
+            component={NavLink}
+            style={({ isActive }) =>
+              isActive ? { color: "#313DAD" } : { color: "inherit" }
+            }
+            to="/services"
+            color={"tertiary"}
+            sx={{ display: "block", px: 3, py: 1 }}>
+            Services
+          </Button>
+          <Button
+            onClick={{ handleClose }}
+            component={NavLink}
+            style={({ isActive }) =>
+              isActive ? { color: "#313DAD" } : { color: "inherit" }
+            }
+            to="/contact"
+            color={"tertiary"}
+            sx={{ display: "block", px: 3, py: 1 }}>
+            Contact
+          </Button>
+          <Button
+            onClick={{ handleClose }}
+            component={NavLink}
+            to="/careers"
+            color={"tertiary"}
+            sx={{ display: "block", px: 3, py: 1 }}>
+            Careers
+          </Button>
+        </Box>
       </Drawer>
     </>
   );

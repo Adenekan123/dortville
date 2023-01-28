@@ -1,6 +1,5 @@
 import React from "react";
 
-import Header from "../components/common/header.component";
 import GlassBg from "../components/glassBg.component";
 import AppointMent from "../components/appointment.component";
 import RadiusImageSection from "../components/radius-image-section.component";
@@ -15,7 +14,6 @@ import { Grid, Stack, Typography, Paper, Box, Chip } from "@mui/material";
 const Products = () => {
   return (
     <>
-      <Header />
       <Paper
         elevation={0}
         sx={{

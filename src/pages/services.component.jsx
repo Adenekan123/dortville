@@ -1,6 +1,5 @@
 import React from "react";
 
-import Header from "../components/common/header.component";
 import BlogCard from "../components/blogCard.component";
 import {
   Container,
@@ -13,15 +12,12 @@ import {
   ImageListItem,
 } from "@mui/material";
 
-import GlassBg from "../components/glassBg.component";
-
 import fruits from "../assets/images/fruits.jpg";
 import meat from "../assets/images/meat2.jpg";
 import farmconsult from "../assets/images/farmconsult2.jpg";
 import training from "../assets/images/farmconsult.jpg";
 import supply from "../assets/images/banner-bg2.jpg";
 import animal from "../assets/images/animal.jpg";
-import best from "../assets/images/banner-bg.jpg";
 import joinUsImage from "../assets/images/banner-bg4.jpg";
 import crops from "../assets/images/crops.jpg";
 import poultry from "../assets/images/poultry.jpg";
@@ -33,7 +29,6 @@ import { ChevronRight } from "@mui/icons-material";
 const Services = () => {
   return (
     <>
-      <Header />
       <Container
         sx={{
           position: "relative",
@@ -633,15 +628,6 @@ const Services = () => {
             View all posts
           </Button>
         </Box>
-      </Paper>
-      <Paper
-        elevation={0}
-        sx={{
-          py: { xs: 0, md: 3 },
-          px: { xs: 0, md: 12 },
-          position: "relative",
-        }}>
-        <GlassBg src={best}></GlassBg>
       </Paper>
     </>
   );
