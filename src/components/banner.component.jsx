@@ -37,9 +37,7 @@ const Banner = () => {
         alignItems="center"
         sx={{ position: "relative", zIndex: 1, px: { md: 8 } }}>
         <Grid item md={6}>
-          <Typography
-            sx={{ typography: { xs: "h2", md: "h1" } }}
-            textTransform={"capitalize"}>
+          <Typography variant="h1" textTransform={"capitalize"}>
             We are Dorfville agricultuce
           </Typography>
           <Typography variant="h6" textTransform={"capitalize"} sx={{ mt: 2 }}>
