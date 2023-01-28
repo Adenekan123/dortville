@@ -45,7 +45,8 @@ const Footer = () => {
         direction="row"
         flexWrap="wrap"
         justifyContent="center"
-        alignItems="center">
+        alignItems="center"
+        sx={{ mt: 3 }}>
         <Box>
           <IconButton color="secondary" sx={{ px: 2 }}>
             <Facebook />

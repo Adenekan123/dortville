@@ -37,7 +37,7 @@ const Contact = () => {
           sx={{ position: "relative", zIndex: 1, px: { md: 8 } }}>
           <Grid item md={6}>
             <Typography
-              sx={{ typography: { xs: "h2", md: "h1" } }}
+              sx={{ typography: { xs: "h3", md: "h1" } }}
               textTransform={"capitalize"}>
               We're here
             </Typography>
