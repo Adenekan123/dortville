@@ -52,7 +52,10 @@ const Header = () => {
     <AppBar
       component="nav"
       elevation={0}
-      sx={{ backgroundColor: "transparent" }}>
+      sx={{
+        backgroundColor: "transparent",
+        position: "relative",
+      }}>
       <Toolbar
         sx={{
           justifyContent: "space-between",
@@ -77,7 +80,7 @@ const Header = () => {
             <img
               src={logo}
               alt="logo"
-              height={navBg ? "50px" : "100px"}
+              height={navBg ? "50px" : "70px"}
               style={{ transition: ".2s " }}
             />
             <Box sx={{ width: "auto" }}>

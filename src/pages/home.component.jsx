@@ -1,6 +1,6 @@
 import React from "react";
 
-import Banner from "../components/banner.component";
+import Banner from "../components/Banner/";
 import BlogCard from "../components/blogCard.component";
 import {
   Container,
@@ -121,12 +121,17 @@ const Home = () => {
 
       <Paper
         elevation={0}
-        sx={{ py: 10, px: { xs: 3, md: 12 }, backgroundColor: "#FAFAFA" }}>
+        sx={{ py: 10, px: { xs: 3, md: 12 }, backgroundColor: "#24255B" }}>
         <Container sx={{ textAlign: "center", mb: 8 }} maxWidth="md">
-          <Typography sx={{ mb: 1, typography: { xs: "h4", md: "h3" } }}>
+          <Typography
+            sx={{
+              mb: 1,
+              color: "white",
+              typography: { xs: "h4", md: "h3" },
+            }}>
             Our Featured Products
           </Typography>
-          <Typography variant="body2" color="grey" sx={{ lineHeight: 2 }}>
+          <Typography variant="body2" color="#ccc" sx={{ lineHeight: 2 }}>
             We make use of renewable energy in all our farm operations as much
             as possible and ensuring that all wastes generated at the farm are
             recycled and reused on the farm.
