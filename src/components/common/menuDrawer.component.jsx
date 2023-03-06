@@ -41,12 +41,14 @@ const MenuDrawer = () => {
           backgroundColor: navBg ? "#ffffffe1" : "transparent",
           backdropFilter: "blur(5px)",
         }}>
-        <img
-          src={logo}
-          alt="logo"
-          height={"50px"}
-          style={{ transition: ".2s " }}
-        />
+        <Box component={NavLink} to="/">
+          <img
+            src={logo}
+            alt="logo"
+            height={"50px"}
+            style={{ transition: ".2s " }}
+          />
+        </Box>
         <Box onClick={handleOpen}>
           <Menu />
         </Box>
