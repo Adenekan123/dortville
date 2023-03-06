@@ -79,12 +79,14 @@ const Header = () => {
               backgroundColor: navBg ? "#ffffffe1" : "transparent",
               backdropFilter: navBg ? "blur(5px)" : "none",
             }}>
-            <img
-              src={logo}
-              alt="logo"
-              height={navBg ? "50px" : "70px"}
-              style={{ transition: ".2s " }}
-            />
+            <Box component={NavLink} to="/">
+              <img
+                src={logo}
+                alt="logo"
+                height={navBg ? "50px" : "70px"}
+                style={{ transition: ".2s " }}
+              />
+            </Box>
             <Box sx={{ width: "auto" }}>
               <Button
                 component={NavLink}
