@@ -1,13 +1,11 @@
 import React from "react";
 
-import BlogCard from "../components/blogCard.component";
 import {
   Container,
   Paper,
   Grid,
   Box,
   Typography,
-  Button,
   ImageList,
   ImageListItem,
 } from "@mui/material";

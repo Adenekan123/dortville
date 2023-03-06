@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Button, Paper, Grid, Box, Typography } from "@mui/material";
+import { Container, Button, Grid, Box, Typography } from "@mui/material";
 
 import farmer from "../assets//images/farmer.jpg";
 
