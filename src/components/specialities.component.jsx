@@ -10,6 +10,8 @@ import {
   CardContent,
 } from "@mui/material";
 
+import Flip from "react-reveal/Flip";
+
 import { Link } from "@mui/icons-material";
 import { NavLink } from "react-router-dom";
 
@@ -41,192 +43,208 @@ const Specialities = () => {
 
       <Grid container spacing={2}>
         <Grid item xs={12} md={3}>
-          <Card
-            elevation={0}
-            sx={{
-              textAlign: "center",
-              boxShadow: "0px 20px 25px rgba(0,0,0,4%)",
-              borderRadius: "8px",
-              position: "relative",
-              "&:hover .MuiBox-root": { height: "180px" },
-            }}>
-            <CardMedia sx={{ height: 180 }} image={crops} title="crops" />
-            <CardContent>
-              <Typography variant="h6">Crop Production</Typography>
-            </CardContent>
-            <Box
-              component={NavLink}
-              to="/products/crops"
+          <Flip bottom>
+            <Card
+              elevation={0}
               sx={{
-                position: "absolute",
-                top: "0",
-                right: "0",
-                backgroundColor: "#2222227b",
-                color: "#fff",
-                backdropFilter: "saturation(100%) blur(5px)",
-                width: "100%",
-                height: "0",
-                transition: "height .3s ease",
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-                cursor: "pointer",
+                textAlign: "center",
+                boxShadow: "0px 20px 25px rgba(0,0,0,4%)",
+                borderRadius: "8px",
+                position: "relative",
+                "&:hover .MuiBox-root": { height: "180px" },
               }}>
-              <Link />
-            </Box>
-          </Card>
+              <CardMedia sx={{ height: 180 }} image={crops} title="crops" />
+              <CardContent>
+                <Typography variant="h6">Crop Production</Typography>
+              </CardContent>
+              <Box
+                component={NavLink}
+                to="/products/crops"
+                sx={{
+                  position: "absolute",
+                  top: "0",
+                  right: "0",
+                  backgroundColor: "#2222227b",
+                  color: "#fff",
+                  backdropFilter: "saturation(100%) blur(5px)",
+                  width: "100%",
+                  height: "0",
+                  transition: "height .3s ease",
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  cursor: "pointer",
+                }}>
+                <Link />
+              </Box>
+            </Card>
+          </Flip>
         </Grid>
 
         <Grid item xs={12} md={3}>
-          <Card
-            elevation={0}
-            sx={{
-              textAlign: "center",
-              boxShadow: "0px 20px 25px rgba(0,0,0,4%)",
-              borderRadius: "8px",
-              position: "relative",
-              "&:hover .MuiBox-root": { height: "180px" },
-            }}>
-            <CardMedia sx={{ height: 180 }} image={poultry} title="poultry" />
-            <CardContent>
-              <Typography variant="h6">Poultry Faming</Typography>
-            </CardContent>
-            <Box
-              component={NavLink}
-              to="/products/poultry"
+          <Flip bottom>
+            <Card
+              elevation={0}
               sx={{
-                position: "absolute",
-                top: "0",
-                right: "0",
-                backgroundColor: "#2222227b",
-                color: "#fff",
-                backdropFilter: "saturation(100%) blur(5px)",
-                width: "100%",
-                height: "0",
-                transition: "height .3s ease",
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-                cursor: "pointer",
+                textAlign: "center",
+                boxShadow: "0px 20px 25px rgba(0,0,0,4%)",
+                borderRadius: "8px",
+                position: "relative",
+                "&:hover .MuiBox-root": { height: "180px" },
               }}>
-              <Link />
-            </Box>
-          </Card>
+              <CardMedia sx={{ height: 180 }} image={poultry} title="poultry" />
+              <CardContent>
+                <Typography variant="h6">Poultry Faming</Typography>
+              </CardContent>
+              <Box
+                component={NavLink}
+                to="/products/poultry"
+                sx={{
+                  position: "absolute",
+                  top: "0",
+                  right: "0",
+                  backgroundColor: "#2222227b",
+                  color: "#fff",
+                  backdropFilter: "saturation(100%) blur(5px)",
+                  width: "100%",
+                  height: "0",
+                  transition: "height .3s ease",
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  cursor: "pointer",
+                }}>
+                <Link />
+              </Box>
+            </Card>
+          </Flip>
         </Grid>
 
         <Grid item xs={12} md={3}>
-          <Card
-            elevation={0}
-            sx={{
-              textAlign: "center",
-              boxShadow: "0px 20px 25px rgba(0,0,0,4%)",
-              borderRadius: "8px",
-              position: "relative",
-              "&:hover .MuiBox-root": { height: "180px" },
-            }}>
-            <CardMedia sx={{ height: 180 }} image={rabbitry} title="rabbitry" />
-            <CardContent>
-              <Typography variant="h6">Rabbitry Farming</Typography>
-            </CardContent>
-            <Box
-              component={NavLink}
-              to="/products/rabbitry"
+          <Flip bottom>
+            <Card
+              elevation={0}
               sx={{
-                position: "absolute",
-                top: "0",
-                right: "0",
-                backgroundColor: "#2222227b",
-                color: "#fff",
-                backdropFilter: "saturation(100%) blur(5px)",
-                width: "100%",
-                height: "0",
-                transition: "height .3s ease",
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-                cursor: "pointer",
+                textAlign: "center",
+                boxShadow: "0px 20px 25px rgba(0,0,0,4%)",
+                borderRadius: "8px",
+                position: "relative",
+                "&:hover .MuiBox-root": { height: "180px" },
               }}>
-              <Link />
-            </Box>
-          </Card>
+              <CardMedia
+                sx={{ height: 180 }}
+                image={rabbitry}
+                title="rabbitry"
+              />
+              <CardContent>
+                <Typography variant="h6">Rabbitry Farming</Typography>
+              </CardContent>
+              <Box
+                component={NavLink}
+                to="/products/rabbitry"
+                sx={{
+                  position: "absolute",
+                  top: "0",
+                  right: "0",
+                  backgroundColor: "#2222227b",
+                  color: "#fff",
+                  backdropFilter: "saturation(100%) blur(5px)",
+                  width: "100%",
+                  height: "0",
+                  transition: "height .3s ease",
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  cursor: "pointer",
+                }}>
+                <Link />
+              </Box>
+            </Card>
+          </Flip>
         </Grid>
         <Grid item xs={12} md={3}>
-          <Card
-            elevation={0}
-            sx={{
-              textAlign: "center",
-              boxShadow: "0px 20px 25px rgba(0,0,0,4%)",
-              borderRadius: "8px",
-              position: "relative",
-              "&:hover .MuiBox-root": { height: "180px" },
-            }}>
-            <CardMedia sx={{ height: 180 }} image={crops} title="crops" />
-            <CardContent>
-              <Typography variant="h6">Fruit and Vegetable Farming</Typography>
-            </CardContent>
-            <Box
-              component={NavLink}
-              to="/products/vegetable"
+          <Flip bottom>
+            <Card
+              elevation={0}
               sx={{
-                position: "absolute",
-                top: "0",
-                right: "0",
-                backgroundColor: "#2222227b",
-                color: "#fff",
-                backdropFilter: "saturation(100%) blur(5px)",
-                width: "100%",
-                height: "0",
-                transition: "height .3s ease",
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-                cursor: "pointer",
+                textAlign: "center",
+                boxShadow: "0px 20px 25px rgba(0,0,0,4%)",
+                borderRadius: "8px",
+                position: "relative",
+                "&:hover .MuiBox-root": { height: "180px" },
               }}>
-              <Link />
-            </Box>
-          </Card>
+              <CardMedia sx={{ height: 180 }} image={crops} title="crops" />
+              <CardContent>
+                <Typography variant="h6">
+                  Fruit and Vegetable Farming
+                </Typography>
+              </CardContent>
+              <Box
+                component={NavLink}
+                to="/products/vegetable"
+                sx={{
+                  position: "absolute",
+                  top: "0",
+                  right: "0",
+                  backgroundColor: "#2222227b",
+                  color: "#fff",
+                  backdropFilter: "saturation(100%) blur(5px)",
+                  width: "100%",
+                  height: "0",
+                  transition: "height .3s ease",
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  cursor: "pointer",
+                }}>
+                <Link />
+              </Box>
+            </Card>
+          </Flip>
         </Grid>
         <Grid item xs={12} md={6}>
-          <Card
-            elevation={0}
-            sx={{
-              textAlign: "center",
-              boxShadow: "0px 20px 25px rgba(0,0,0,4%)",
-              borderRadius: "8px",
-              position: "relative",
-              "&:hover .MuiBox-root": { height: "180px" },
-            }}>
-            <CardMedia
-              sx={{ height: 180 }}
-              image={husbandry}
-              title="husbandry"
-            />
-            <CardContent>
-              <Typography variant="h6">
-                Livestock Farming & Animal Husbandry
-              </Typography>
-            </CardContent>
-            <Box
-              component={NavLink}
-              to="/products/livestock"
+          <Flip bottom>
+            <Card
+              elevation={0}
               sx={{
-                position: "absolute",
-                top: "0",
-                right: "0",
-                backgroundColor: "#2222227b",
-                color: "#fff",
-                backdropFilter: "saturation(100%) blur(5px)",
-                width: "100%",
-                height: "0",
-                transition: "height .3s ease",
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-                cursor: "pointer",
+                textAlign: "center",
+                boxShadow: "0px 20px 25px rgba(0,0,0,4%)",
+                borderRadius: "8px",
+                position: "relative",
+                "&:hover .MuiBox-root": { height: "180px" },
               }}>
-              <Link />
-            </Box>
-          </Card>
+              <CardMedia
+                sx={{ height: 180 }}
+                image={husbandry}
+                title="husbandry"
+              />
+              <CardContent>
+                <Typography variant="h6">
+                  Livestock Farming & Animal Husbandry
+                </Typography>
+              </CardContent>
+              <Box
+                component={NavLink}
+                to="/products/livestock"
+                sx={{
+                  position: "absolute",
+                  top: "0",
+                  right: "0",
+                  backgroundColor: "#2222227b",
+                  color: "#fff",
+                  backdropFilter: "saturation(100%) blur(5px)",
+                  width: "100%",
+                  height: "0",
+                  transition: "height .3s ease",
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  cursor: "pointer",
+                }}>
+                <Link />
+              </Box>
+            </Card>
+          </Flip>
         </Grid>
       </Grid>
     </Paper>

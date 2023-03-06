@@ -9,6 +9,7 @@ import {
   ImageList,
   ImageListItem,
 } from "@mui/material";
+import Slide from "react-reveal/Slide";
 
 import fruits from "../assets/images/fruits.jpg";
 import meat from "../assets/images/meat2.jpg";
@@ -155,14 +156,18 @@ const Services = () => {
         </Grid>
 
         <Grid item md={6} sx={{ order: { xs: "1", md: "0" } }}>
-          <img src={supply} alt="cow" width="100%" height="100%" />
+          <Slide right>
+            <img src={supply} alt="cow" width="100%" height="100%" />
+          </Slide>
         </Grid>
 
         <Grid
           item
           md={6}
           sx={{ order: { xs: "3", md: "0" }, pt: { xs: 4, md: 0 } }}>
-          <img src={meat} alt="cow" width="100%" height="100%" />
+          <Slide left>
+            <img src={meat} alt="cow" width="100%" height="100%" />
+          </Slide>
         </Grid>
         <Grid
           item
@@ -227,13 +232,17 @@ const Services = () => {
           item
           md={6}
           sx={{ order: { xs: "5", md: "0" }, pt: { xs: 4, md: 0 } }}>
-          <img src={farmconsult} alt="cow" width="100%" height="100%" />
+          <Slide right>
+            <img src={farmconsult} alt="cow" width="100%" height="100%" />
+          </Slide>
         </Grid>
         <Grid
           item
           md={6}
           sx={{ order: { xs: "7", md: "0" }, pt: { xs: 4, md: 0 } }}>
-          <img src={training} alt="cow" width="100%" height="100%" />
+          <Slide left>
+            <img src={training} alt="cow" width="100%" height="100%" />
+          </Slide>
         </Grid>
         <Grid
           item
@@ -295,7 +304,9 @@ const Services = () => {
           item
           md={6}
           sx={{ order: { xs: "9", md: "0" }, pt: { xs: 4, md: 0 } }}>
-          <img src={animal} alt="cow" width="100%" height="100%" />
+          <Slide right>
+            <img src={animal} alt="cow" width="100%" height="100%" />
+          </Slide>
         </Grid>
       </Grid>
 

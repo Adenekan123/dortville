@@ -1,5 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import Fade from "react-reveal/Fade";
+import Pulse from "react-reveal/Pulse";
 
 import { Paper, Typography, Grid, Box, Button } from "@mui/material";
 import BlogCard from "./blogCard.component";
@@ -30,59 +32,69 @@ const LatestPost = () => {
       </Typography>
       <Grid container spacing={3}>
         <Grid item md={3}>
-          <BlogCard src={joinUsImage}>
-            <Typography gutterBottom variant="h5" component="div">
-              Lizard
-            </Typography>
-            <Typography variant="body2" color="text.secondary">
-              Lizards are a widespread group of squamate reptiles, with over
-              6,000 species, ranging across all continents except Antarctica
-            </Typography>
-          </BlogCard>
+          <Fade bottom>
+            <BlogCard src={joinUsImage}>
+              <Typography gutterBottom variant="h5" component="div">
+                Lizard
+              </Typography>
+              <Typography variant="body2" color="text.secondary">
+                Lizards are a widespread group of squamate reptiles, with over
+                6,000 species, ranging across all continents except Antarctica
+              </Typography>
+            </BlogCard>
+          </Fade>
         </Grid>
         <Grid item md={3}>
-          <BlogCard src={poultry}>
-            <Typography gutterBottom variant="h5" component="div">
-              Lizard
-            </Typography>
-            <Typography variant="body2" color="text.secondary">
-              Lizards are a widespread group of squamate reptiles, with over
-              6,000 species, ranging across all continents except Antarctica
-            </Typography>
-          </BlogCard>
+          <Fade bottom>
+            <BlogCard src={poultry}>
+              <Typography gutterBottom variant="h5" component="div">
+                Lizard
+              </Typography>
+              <Typography variant="body2" color="text.secondary">
+                Lizards are a widespread group of squamate reptiles, with over
+                6,000 species, ranging across all continents except Antarctica
+              </Typography>
+            </BlogCard>
+          </Fade>
         </Grid>
         <Grid item md={3}>
-          <BlogCard src={husbandry}>
-            <Typography gutterBottom variant="h5" component="div">
-              Lizard
-            </Typography>
-            <Typography variant="body2" color="text.secondary">
-              Lizards are a widespread group of squamate reptiles, with over
-              6,000 species, ranging across all continents except Antarctica
-            </Typography>
-          </BlogCard>
+          <Fade bottom>
+            <BlogCard src={husbandry}>
+              <Typography gutterBottom variant="h5" component="div">
+                Lizard
+              </Typography>
+              <Typography variant="body2" color="text.secondary">
+                Lizards are a widespread group of squamate reptiles, with over
+                6,000 species, ranging across all continents except Antarctica
+              </Typography>
+            </BlogCard>
+          </Fade>
         </Grid>
         <Grid item md={3}>
-          <BlogCard src={rabbitry}>
-            <Typography gutterBottom variant="h5" component="div">
-              Lizard
-            </Typography>
-            <Typography variant="body2" color="text.secondary">
-              Lizards are a widespread group of squamate reptiles, with over
-              6,000 species, ranging across all continents except Antarctica
-            </Typography>
-          </BlogCard>
+          <Fade bottom>
+            <BlogCard src={rabbitry}>
+              <Typography gutterBottom variant="h5" component="div">
+                Lizard
+              </Typography>
+              <Typography variant="body2" color="text.secondary">
+                Lizards are a widespread group of squamate reptiles, with over
+                6,000 species, ranging across all continents except Antarctica
+              </Typography>
+            </BlogCard>
+          </Fade>
         </Grid>
       </Grid>
       <Box sx={{ textAlign: "center", mt: 8 }}>
-        <Button
-          component={NavLink}
-          to="/blog"
-          color="secondary"
-          variant="text"
-          endIcon={<ChevronRight />}>
-          View all posts
-        </Button>
+        <Pulse>
+          <Button
+            component={NavLink}
+            to="/blog"
+            color="secondary"
+            variant="text"
+            endIcon={<ChevronRight />}>
+            View all posts
+          </Button>
+        </Pulse>
       </Box>
     </Paper>
   );
