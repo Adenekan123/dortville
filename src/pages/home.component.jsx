@@ -1,5 +1,5 @@
 import React from "react";
-import Zoom from "react-reveal/Zoom";
+import Zoom from "react-reveal";
 
 import Banner from "../components/Banner/";
 import { Paper, Grid, Typography, Chip, Box } from "@mui/material";
