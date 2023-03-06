@@ -10,6 +10,7 @@ import {
 } from "@mui/material";
 
 import { Link, Share } from "@mui/icons-material";
+import { NavLink } from "react-router-dom";
 
 const BlogCard = ({ children, src }) => {
   return (
@@ -32,6 +33,8 @@ const BlogCard = ({ children, src }) => {
       </CardActions>
 
       <Box
+        component={NavLink}
+        to="/blog/example"
         sx={{
           position: "absolute",
           top: "0",

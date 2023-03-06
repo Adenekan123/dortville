@@ -9,8 +9,8 @@ const Careers = () => {
       <Container
         sx={{
           position: "relative",
-          pt: { xs: 15, md: 20 },
-          pb: 10,
+          zIndex: -1,
+          p: { xs: 5 },
           backgroundColor: "#FAFAFA",
         }}
         maxWidth="false">
@@ -48,26 +48,12 @@ const Careers = () => {
               agricultural company committed to innovative agricultural practice
             </Typography>
             <Box>
-              <Typography
-                variant="h4"
-                color="warning.main"
-                textTransform={"capitalize"}
-                sx={{ mt: 4, mb: 2, typography: { xs: "h5", md: "h4" } }}>
+              <Button
+                variant="contained"
+                color="secondary"
+                sx={{ py: 2, mt: 3 }}>
                 Submit your CV for our review
-              </Typography>
-              <Paper sx={{ width: "100%" }}>
-                <Button
-                  variant="contained"
-                  component="label"
-                  color="secondary"
-                  sx={{ py: 2 }}>
-                  Upload File
-                  <input type="file" hidden />
-                </Button>
-                <Typography sx={{ display: "inline-block", pl: 2 }}>
-                  *pdf,*word
-                </Typography>
-              </Paper>
+              </Button>
             </Box>
           </Grid>
           <Grid

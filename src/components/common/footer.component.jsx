@@ -8,7 +8,7 @@ const Footer = () => {
       sx={{
         py: 5,
         px: { xs: 0, md: 12 },
-        backgroundColor: "#eee",
+        backgroundColor: "#fff",
       }}>
       <Stack
         direction="row"

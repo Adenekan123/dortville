@@ -15,6 +15,9 @@ export const SlideContainer = styled(Box)({
     animationDuration: "1.5s",
     animationFillMode: "both",
   },
+  "@media(max-width:767px)": {
+    minHeight: "60vh",
+  },
 });
 
 export const SlideImage = styled(Box)`
@@ -50,6 +53,11 @@ export const HeroContent = styled(Box)({
   zIndex: 1,
   paddingLeft: "10rem",
   color: "#fff",
+  maxWidth: "60%",
+  "@media(max-width:750px)": {
+    maxWidth: "100%",
+    paddingLeft: "16px",
+  },
 });
 
 const ArrowButton = styled(Box)({
@@ -59,23 +67,25 @@ const ArrowButton = styled(Box)({
   top: "50%",
   transform: "translateY(-50%)",
   zIndex: 1,
-  color: "darkblue",
-  backgroundColor: "#fff",
+  color: "#fff",
+  backgroundColor: "rgba(7, 196, 7, 0.8)",
   padding: "0.5rem",
   borderRadius: "50%",
   cursor: "pointer",
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
+  opacity: 0,
+  transition: ".5s ease",
   "&:hover": {
-    backgroundColor: "rgba(0, 0, 0, 0.8)",
-    color: "#fff",
+    backgroundColor: "#fff",
+    color: "#111",
   },
 });
 
 export const PrevArrow = ({ onClick }) => {
   return (
-    <ArrowButton onClick={onClick} sx={{ left: "1rem" }}>
+    <ArrowButton className="slider-btn" onClick={onClick} sx={{ left: "1rem" }}>
       <ArrowLeftAltIcon />
     </ArrowButton>
   );
@@ -83,7 +93,10 @@ export const PrevArrow = ({ onClick }) => {
 
 export const NextArrow = ({ onClick }) => {
   return (
-    <ArrowButton onClick={onClick} sx={{ right: "1rem" }}>
+    <ArrowButton
+      className="slider-btn"
+      onClick={onClick}
+      sx={{ right: "1rem" }}>
       <ArrowRightAltIcon />
     </ArrowButton>
   );

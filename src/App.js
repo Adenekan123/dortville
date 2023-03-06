@@ -8,6 +8,9 @@ import About from "./pages/about.component";
 import Contact from "./pages/contact.component";
 import Services from "./pages/services.component.jsx";
 import Careers from "./pages/careers.component.jsx";
+import Products from "./pages/products.component";
+import Blog from "./pages/blog.component";
+import BlogPreview from "./pages/blogPreview.component";
 
 import Header from "./components/common/header.component.jsx";
 import Footer from "./components/common/footer.component.jsx";
@@ -21,6 +24,10 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/careers" element={<Careers />} />
         <Route path="/services" element={<Services />} />
+        <Route path="/products" element={<Products />} />
+        <Route path="/products/:id" element={<Products />} />
+        <Route path="/blog" element={<Blog />} />
+        <Route path="/blog/:id" element={<BlogPreview />} />
       </Routes>
       <Footer />
     </ThemeProvider>

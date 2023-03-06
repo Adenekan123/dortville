@@ -8,45 +8,44 @@ import Typography from "@mui/material/Typography";
 
 import { SlideContainer, SlideImage, HeroContent } from "./styles";
 
-import { imageUrls, settings } from "./setup";
+import { settings, slidesContent } from "./setup";
 
-import paper from "../../assets/images/paper.png";
-
-import { Button } from "@mui/material";
+import AppointMent from "../appointment.component";
 
 const Banner = () => {
   return (
-    <Box className="custom-slider" sx={{ position: "relative" }}>
-      <Box
+    <Box
+      className="custom-slider"
+      sx={{ position: "relative", ":hover .slider-btn": { opacity: 1 } }}>
+      {/* <Box
         component="img"
         src={paper}
         sx={{
           position: "absolute",
           left: 0,
-          top: "-53px",
+          top: "-45px",
           transform: "rotate(180deg)",
           width: "100%",
           zIndex: 1,
         }}
-      />
+      /> */}
       <Slider {...settings}>
-        {imageUrls.map((imageUrl, index) => (
+        {slidesContent.map(({ img, heroText, subtitle }, index) => (
           <SlideContainer key={index}>
-            <SlideImage imageurl={imageUrl} className="slider-img" />
+            <SlideImage imageurl={img} className="slider-img" />
             <HeroContent className="hero-content">
               <Typography
                 variant="h1"
                 className="animated-text"
-                sx={{ textTransform: "capitalize" }}>
-                we are dorfville
+                sx={{
+                  textTransform: "capitalize",
+                  typography: { xs: "h3", md: "h1" },
+                  mb: 2,
+                }}>
+                {heroText}
               </Typography>
-              <Typography variant="subtitle1">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Id
-                officiis quasi
-              </Typography>
-              <Button variant="contained" sx={{ mt: 5 }}>
-                Join Us
-              </Button>
+              <Typography variant="subtitle1">{subtitle}</Typography>
+              <AppointMent />
             </HeroContent>
           </SlideContainer>
         ))}
