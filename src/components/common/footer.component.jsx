@@ -1,11 +1,4 @@
-import {
-  Paper,
-  Stack,
-  Box,
-  Button,
-  IconButton,
-  Typography,
-} from "@mui/material";
+import { Paper, Stack, Box, IconButton, Typography } from "@mui/material";
 import { Facebook, LinkedIn, Twitter } from "@mui/icons-material";
 
 const Footer = () => {
