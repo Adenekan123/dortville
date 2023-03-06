@@ -1,4 +1,11 @@
-import { Paper, Stack, Box, Button, IconButton } from "@mui/material";
+import {
+  Paper,
+  Stack,
+  Box,
+  Button,
+  IconButton,
+  Typography,
+} from "@mui/material";
 import { Facebook, LinkedIn, Twitter } from "@mui/icons-material";
 
 const Footer = () => {
@@ -10,7 +17,7 @@ const Footer = () => {
         px: { xs: 0, md: 12 },
         backgroundColor: "#fff",
       }}>
-      <Stack
+      {/* <Stack
         direction="row"
         flexWrap="wrap"
         justifyContent="center"
@@ -40,7 +47,7 @@ const Footer = () => {
             Careers
           </Button>
         </Box>
-      </Stack>
+      </Stack> */}
       <Stack
         direction="row"
         flexWrap="wrap"
@@ -63,6 +70,9 @@ const Footer = () => {
           </IconButton>
         </Box>
       </Stack>
+      <Typography sx={{ textAlign: "center", mt: 2 }}>
+        &copy; 2023 Dorfville | All Rights Reserved
+      </Typography>
     </Paper>
   );
 };
