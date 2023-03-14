@@ -64,7 +64,7 @@ const Footer = () => {
         </Box>
       </Stack>
       <Typography sx={{ textAlign: "center", mt: 2 }}>
-        &copy; 2023 Dorfville | All Rights Reserved
+        &copy; 2023 Dorfville Farms | All Rights Reserved
       </Typography>
     </Paper>
   );

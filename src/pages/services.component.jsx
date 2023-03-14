@@ -135,10 +135,13 @@ const Services = () => {
           }}>
           <Paper elevation={0} sx={{ textAlign: { xs: "center", md: "left" } }}>
             <Typography
-              sx={{ typography: { xs: "h4", md: "h3" } }}
+              sx={{
+                typography: { xs: "h4", md: "h3" },
+                textTransform: "uppercase",
+              }}
               color="tertiary"
               id="heading">
-              Sales and supply of agricultural produce
+              Sales and Supply of Agricultural Produce
             </Typography>
           </Paper>
 
@@ -146,12 +149,14 @@ const Services = () => {
             variant="body1"
             lineHeight={2}
             sx={{ mt: 3, textAlign: "justify" }}>
-            Sales and supply of agricultural produce trusted by all customers;
-            "Sellers to consumers" include small-scale farmers, food retailers
-            (farm stores), convenience store operators who sell goods sold at
-            retail outlets only in or near their premises, grocery/distributor
-            merchants serving primarily those areas where the seller's product
-            is available as fresh meat products for sale.
+            Sales and supply of agricultural produce trusted by our customers.
+            We package, sell, supply and deliver quality foods and food items
+            produced and processed by Dorfville farms and our trusted partners
+            to our customers to satisfy their various needs. We provide a
+            platform for like minded partner farms producing quality food items
+            to sell their farm produce to our customers profitably. Partner
+            farms are able to make use of our robust e-commerce platform to
+            access a ready made market of direct consumers.
           </Typography>
         </Grid>
 
@@ -180,7 +185,10 @@ const Services = () => {
           }}>
           <Paper elevation={0} sx={{ textAlign: { xs: "center", md: "left" } }}>
             <Typography
-              sx={{ typography: { xs: "h4", md: "h3" } }}
+              sx={{
+                typography: { xs: "h4", md: "h3" },
+                textTransform: "capitalize",
+              }}
               color="tertiary"
               id="heading">
               Supply of Agricultural farm inputs and raw materials
@@ -192,11 +200,11 @@ const Services = () => {
             lineHeight={2}
             sx={{ mt: 3, textAlign: "justify" }}>
             Agricultural inputs and raw materials are essential in the
-            production of goods and services in the agricultural sector. The two
-            terms are often used interchangeably but they have different
-            meanings. Agricultural inputs are materials used in the production
-            of crops and livestock, while raw materials are unprocessed
-            materials used in the production of finished goods.
+            production of goods and services in the agricultural sector. At
+            Dorfville we are authorised reseller and services provider of the
+            major agricultural input manufacturers. We supply quality farm
+            inputs such as seeds, agro-chemicals, medications, Vaccines, and
+            farm machineries at affordable costs.
           </Typography>
         </Grid>
         <Grid
@@ -210,7 +218,10 @@ const Services = () => {
           }}>
           <Paper elevation={0} sx={{ textAlign: { xs: "center", md: "left" } }}>
             <Typography
-              sx={{ typography: { xs: "h4", md: "h3" } }}
+              sx={{
+                typography: { xs: "h4", md: "h3" },
+                textTransform: "capitalize",
+              }}
               color="tertiary"
               id="heading">
               Poultry Consultancy and Poultry Equipment
@@ -221,11 +232,12 @@ const Services = () => {
             variant="body1"
             lineHeight={2}
             sx={{ mt: 3, textAlign: "justify" }}>
-            Poultry Consultancy and Poultry Equipment, we educate customers
-            about what kinds of fresh eggs they should buy. The Chicken &
-            Dungarees Egg Bowl - Eggs in the shell are easy to eat by themselves
-            or with gravy! This egg bowl features our standard-sized chicken
-            dumplings made from tender juicy yolk that's served as a side dish.
+            With the eggs and poultry meat market currently underserved, there
+            are increasing demand for eggs and poultry meat. We provide
+            consultancy services to help intending poultry farmers with setting
+            up new poultry farms, and processing facilities. Our services
+            include construction of structures, supply of cages, POL birds,
+            feeds and medications.
           </Typography>
         </Grid>
         <Grid
@@ -255,7 +267,10 @@ const Services = () => {
           }}>
           <Paper elevation={0} sx={{ textAlign: { xs: "center", md: "left" } }}>
             <Typography
-              sx={{ typography: { xs: "h4", md: "h3" } }}
+              sx={{
+                typography: { xs: "h4", md: "h3" },
+                textTransform: "capitalize",
+              }}
               color="tertiary"
               id="heading">
               Agricultural Training and Consultancy Services
@@ -266,11 +281,10 @@ const Services = () => {
             variant="body1"
             lineHeight={2}
             sx={{ mt: 3, textAlign: "justify" }}>
-            gricultural Training and Consultancy Services for our clients to
-            help them with their farms, gardens or landscaping projects. A guide
-            that gives some ideas about the different areas of agriculture as
-            well how they should be treated by your farm management team when
-            buying a home-based system from us.
+            We provide agricultural training and consultancy services for our
+            clients to help them with their farms, gardens or landscaping
+            projects. We help you bring your farming dreams to reality, by
+            providing you hands-on guidance and support all the step of the way.
           </Typography>
         </Grid>
         <Grid
@@ -295,9 +309,13 @@ const Services = () => {
             variant="body1"
             lineHeight={2}
             sx={{ mt: 3, textAlign: "justify" }}>
-            Animal Husbandry Management, we produce fresh meat from our garden
-            every month. We're in the business to help you provide that quality
-            farm-fresh product at affordable prices for everyone's enjoyment."
+            We provide consultancy services to help with setting up your
+            livestock farm of improved breeds of of cows, sheep, and goats. We
+            supply quality breeds of breeding animals to help improve the
+            quality of breeds in your farm. We also provide out customers with
+            insemination services to cross their flocks for reproduction.
+            Additionally, we also raise animals for our clients at a affordable
+            cost using our existing facilities.
           </Typography>
         </Grid>
         <Grid

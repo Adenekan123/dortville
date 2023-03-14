@@ -42,7 +42,7 @@ const Contact = () => {
               We're here
             </Typography>
             <Typography variant="h6" sx={{ mt: 2 }}>
-              One Door is Always Open For a Good Cup of Coffee.
+              Good Chat.
             </Typography>
             <AppointMent />
           </Grid>
@@ -64,8 +64,8 @@ const Contact = () => {
             <Stack direction="row" sx={{ alignItems: "center", mb: 3 }}>
               <LocationOn color="secondary" />
               <Typography variant="h6" sx={{ ml: 2 }}>
-                Dorfville street, off Moniya Iseyin Road, Ijaye town Akinyele
-                LGA, Ibadan, Oyo state - Nigeria
+                Dorfville road, off Moniya Iseyin Road, Ijaye town Akinyele LGA,
+                Ibadan, Oyo state - Nigeria
               </Typography>
             </Stack>
           </Grid>
