@@ -3,7 +3,7 @@ import bg1 from "../../assets/images/bg1.jpg";
 import bg2 from "../../assets/images/bg2.jpg";
 import bg3 from "../../assets/images/bg3.jpg";
 
-import meat from "../../assets/images/meat2.jpg";
+import meat from "../../assets/images/meat3.jpg";
 import training from "../../assets/images/farmconsult.jpg";
 import supply from "../../assets/images/banner-bg2.jpg";
 
