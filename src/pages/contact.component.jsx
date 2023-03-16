@@ -42,7 +42,7 @@ const Contact = () => {
               We're here
             </Typography>
             <Typography variant="h6" sx={ { mt: 2 } }>
-              One Door is Always Open for a Good Chat.
+              One Door is Always open for a Good Chat.
             </Typography>
             <AppointMent />
           </Grid>
@@ -64,7 +64,7 @@ const Contact = () => {
             <Stack direction="row" sx={ { alignItems: "center", mb: 3 } }>
               <LocationOn color="secondary" />
               <Typography variant="h6" sx={ { ml: 2 } }>
-                Dorfville road, off Moniya Iseyin Road, Ijaye town Akinyele LGA,
+                Dorfville Avenue, off Moniya Iseyin Road, Ijaye town Akinyele LGA,
                 Ibadan, Oyo state - Nigeria
               </Typography>
             </Stack>
