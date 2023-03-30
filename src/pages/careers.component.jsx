@@ -7,6 +7,7 @@ const Careers = () => {
   const [selectedFile, setSelectedFile] = useState(null);
   const [error, setError] = useState(false);
   const [success, setSuccess] = useState(false);
+  const [uploading, setUploading] = useState(false);
 
   const onFileChange = (e) => {
     setSelectedFile(e.target.files[0]);
@@ -14,6 +15,7 @@ const Careers = () => {
 
   useEffect(() => {
     if (selectedFile) {
+      setUploading(true);
       const formData = new FormData();
       formData.append("cv", selectedFile);
       fetch(`${process.env.REACT_APP_API_URL}/career`, {
@@ -23,9 +25,11 @@ const Careers = () => {
         .then((response) => {
           if (response.ok) setSuccess(true);
           else setError(true);
+          setUploading(false);
         })
         .catch((e) => {
           console.log(e);
+          setUploading(false);
           setError(true);
         });
     }
@@ -39,7 +43,7 @@ const Careers = () => {
           backgroundColor: "#FAFAFA",
         }}
         maxWidth="false">
-        <Box
+        {/* <Box
           sx={{
             width: "270px",
             height: "270px",
@@ -50,7 +54,7 @@ const Careers = () => {
             top: "-90px",
             left: "-50px",
             backdropFilter: "blur(10px)",
-          }}></Box>
+          }}></Box> */}
 
         <Grid
           container
@@ -104,6 +108,11 @@ const Careers = () => {
               <Typography sx={{ color: "red", fontWeight: "bold", mt: 2 }}>
                 There was an error submitting your feedback. Please try again
                 later.
+              </Typography>
+            )}
+            {uploading && (
+              <Typography sx={{ color: "green", fontWeight: "bold", mt: 2 }}>
+                Uploading...
               </Typography>
             )}
           </Grid>

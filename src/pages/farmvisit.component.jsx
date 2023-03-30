@@ -15,6 +15,7 @@ const Farmvisit = () => {
   const [requestform, setRequestform] = useState(initialState);
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState(false);
+  const [sending, setSending] = useState(false);
 
   const oninputchange = (e) => {
     const { name, value } = e.target;
@@ -25,6 +26,7 @@ const Farmvisit = () => {
     e.preventDefault();
 
     try {
+      setSending(true);
       const response = await fetch(
         `${process.env.REACT_APP_API_URL}/farmvisits`,
         {
@@ -36,12 +38,15 @@ const Farmvisit = () => {
         }
       );
       if (response.ok) {
+        setSending(false);
         setSuccess(true);
       } else {
         setError(true);
+        setSending(false);
       }
     } catch (e) {
       console.log(e);
+      setSending(false);
       setError(true);
     }
   };
@@ -154,15 +159,18 @@ const Farmvisit = () => {
                 Submit
               </Button>
               {success && (
-                <p sx={{ color: "green", fontWeight: "bold" }}>
-                  Thank you for your feedback!
+                <p style={{ color: "green", fontWeight: "bold" }}>
+                  Farm Visit Request Sent.
                 </p>
               )}
               {error && (
-                <p sx={{ color: "red", fontWeight: "bold" }}>
+                <p style={{ color: "red", fontWeight: "bold" }}>
                   There was an error submitting your feedback. Please try again
                   later.
                 </p>
+              )}
+              {sending && (
+                <p style={{ color: "green", fontWeight: "bold" }}>Sending...</p>
               )}
             </Box>
           </Grid>

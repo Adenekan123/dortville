@@ -21,7 +21,7 @@ const About = () => {
           backgroundColor: "#FAFAFA",
         }}
         maxWidth="false">
-        <Box
+        {/* <Box
           sx={{
             width: "270px",
             height: "270px",
@@ -32,7 +32,7 @@ const About = () => {
             top: "-90px",
             left: "-50px",
             backdropFilter: "blur(10px)",
-          }}></Box>
+          }}></Box> */}
 
         <Grid
           container
