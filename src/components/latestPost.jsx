@@ -14,7 +14,7 @@ const LatestPost = () => {
 
   useEffect(() => {
     setIsLoading(true);
-    fetch("http://localhost:5000/posts")
+    fetch(`${process.env.REACT_APP_API_URL}/posts`)
       .then((response) => response.json())
       .then((items) => {
         const data = items.filter((item, index) => index < 4);
