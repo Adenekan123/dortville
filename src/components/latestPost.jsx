@@ -47,7 +47,7 @@ const LatestPost = () => {
           </Typography>
           <Grid container spacing={3}>
             {posts.map((post) => (
-              <Grid item md={3} key={post.title}>
+              <Grid item xs={12} md={3} key={post.title}>
                 <Fade bottom>
                   <BlogCard
                     src={`data:${post.image.contentType};base64,${post.image.data}`}
