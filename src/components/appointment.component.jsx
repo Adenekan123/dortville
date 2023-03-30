@@ -1,13 +1,14 @@
 import React from "react";
 
 import { Box } from "@mui/material";
+import { Link } from "react-router-dom";
 
 // import { LocationOn, CalendarMonth, TimeToLeave } from "@mui/icons-material";
 
 const AppointMent = () => {
   return (
     <Box
-      component={"button"}
+      component={"a"}
       sx={{
         px: 3,
         py: 3,
@@ -20,7 +21,9 @@ const AppointMent = () => {
         color: "#fff",
         borderRadius: "5px",
       }}>
-      Book a Farm Visit
+      <Link style={{ color: "inherit" }} to="/farmvisit">
+        Book a Farm Visit
+      </Link>
     </Box>
   );
 };
