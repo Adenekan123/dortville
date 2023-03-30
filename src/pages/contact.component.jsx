@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Container, Paper, Grid, Box, Typography, Stack } from "@mui/material";
+import { Container, Paper, Grid, Typography, Stack } from "@mui/material";
 
 import AppointMent from "../components/appointment.component";
 
