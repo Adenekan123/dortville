@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 const AppointMent = () => {
   return (
     <Box
-      component={"a"}
+      component={"span"}
       sx={{
         px: 3,
         py: 3,
@@ -19,6 +19,7 @@ const AppointMent = () => {
         border: "1px solid green",
         fontSize: "18px",
         color: "#fff",
+        display: "inline-block",
         borderRadius: "5px",
       }}>
       <Link
