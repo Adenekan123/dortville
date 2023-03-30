@@ -11,7 +11,7 @@ import ArrowLeftAltIcon from "@mui/icons-material/West";
 export const SlideContainer = styled(Box)({
   height: "75vh",
   "& .animating-text": {
-    animationName: "fadeInDown",
+    animationName: "flipInX",
     animationDuration: "1.5s",
     animationFillMode: "both",
   },
@@ -30,7 +30,7 @@ export const SlideImage = styled(Box)`
     url(${(props) => props.imageurl});
   background-repeat: no-repeat;
   background-size: cover;
-  object-fit:cover,
+  object-fit: cover;
   width: 100%;
   height: 100%;
   &.animate-bg {
@@ -86,7 +86,7 @@ const ArrowButton = styled(Box)({
 
 export const PrevArrow = ({ onClick }) => {
   return (
-    <ArrowButton className="slider-btn" onClick={ onClick } sx={ { left: "1rem" } }>
+    <ArrowButton className="slider-btn" onClick={onClick} sx={{ left: "1rem" }}>
       <ArrowLeftAltIcon />
     </ArrowButton>
   );
@@ -96,8 +96,8 @@ export const NextArrow = ({ onClick }) => {
   return (
     <ArrowButton
       className="slider-btn"
-      onClick={ onClick }
-      sx={ { right: "1rem" } }>
+      onClick={onClick}
+      sx={{ right: "1rem" }}>
       <ArrowRightAltIcon />
     </ArrowButton>
   );
