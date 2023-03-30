@@ -21,7 +21,13 @@ const AppointMent = () => {
         color: "#fff",
         borderRadius: "5px",
       }}>
-      <Link style={{ color: "inherit" }} to="/farmvisit">
+      <Link
+        style={{
+          color: "inherit",
+          textDecoration: "none",
+          display: "inline-block",
+        }}
+        to="/farmvisit">
         Book a Farm Visit
       </Link>
     </Box>
