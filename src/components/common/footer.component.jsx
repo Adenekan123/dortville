@@ -1,5 +1,5 @@
 import { Paper, Stack, Box, IconButton, Typography } from "@mui/material";
-import { Facebook, LinkedIn, Twitter } from "@mui/icons-material";
+import { Facebook, LinkedIn, Twitter, Instagram } from "@mui/icons-material";
 
 const Footer = () => {
   return (
@@ -48,18 +48,35 @@ const Footer = () => {
         alignItems="center"
         sx={{ mt: 3 }}>
         <Box>
-          <IconButton color="secondary" sx={{ px: 2 }}>
+          <IconButton
+            color="secondary"
+            sx={{ px: 2 }}
+            href="https://www.facebook.com/dorfvillefarm/"
+            target="_blank">
             <Facebook />
           </IconButton>
         </Box>
         <Box>
-          <IconButton color="secondary" sx={{ px: 2 }}>
+          <IconButton
+            color="secondary"
+            sx={{ px: 2 }}
+            href="https://twitter.com/DorfvilleFarms"
+            target="_blank">
             <Twitter />
           </IconButton>
         </Box>
         <Box>
           <IconButton color="secondary" sx={{ px: 2 }}>
             <LinkedIn />
+          </IconButton>
+        </Box>
+        <Box>
+          <IconButton
+            color="secondary"
+            sx={{ px: 2 }}
+            href="https://instagram.com/dorfville_farms?igshid=YmMyMTA2M2Y="
+            target="_blank">
+            <Instagram />
           </IconButton>
         </Box>
       </Stack>

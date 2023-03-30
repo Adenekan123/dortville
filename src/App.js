@@ -11,6 +11,7 @@ import Careers from "./pages/careers.component.jsx";
 import Products from "./pages/products.component";
 import Blog from "./pages/blog.component";
 import BlogPreview from "./pages/blogPreview.component";
+import Farmvisit from "./pages/farmvisit.component";
 
 import Header from "./components/common/header.component.jsx";
 import Footer from "./components/common/footer.component.jsx";
@@ -28,6 +29,7 @@ function App() {
         <Route path="/products/:id" element={<Products />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/blog/:id" element={<BlogPreview />} />
+        <Route path="/farmvisit" element={<Farmvisit />} />
       </Routes>
       <Footer />
     </ThemeProvider>

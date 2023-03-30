@@ -12,7 +12,7 @@ import {
 import { Link, Share } from "@mui/icons-material";
 import { NavLink } from "react-router-dom";
 
-const BlogCard = ({ children, src }) => {
+const BlogCard = ({ children, src, postid }) => {
   return (
     <Card
       elevation={0}
@@ -34,7 +34,7 @@ const BlogCard = ({ children, src }) => {
 
       <Box
         component={NavLink}
-        to="/blog/example"
+        to={`/blog/${postid}`}
         sx={{
           position: "absolute",
           top: "0",
