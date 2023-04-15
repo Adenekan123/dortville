@@ -81,7 +81,8 @@ const Footer = () => {
         </Box>
       </Stack>
       <Typography sx={{ textAlign: "center", mt: 2 }}>
-        &copy; 2023 Dorfville Farms | All Rights Reserved
+        &copy; {new Date().getFullYear()
+} Dorfville Farms | All Rights Reserved
       </Typography>
     </Paper>
   );
