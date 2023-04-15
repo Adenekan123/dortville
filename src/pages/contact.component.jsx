@@ -33,7 +33,7 @@ const Contact = () => {
           container
           justifyContent={"space-between"}
           alignItems="center"
-          sx={{ position: "relative", zIndex: 1, px: { md: 8 } }}>
+          sx={{ position: "relative", zIndex: 2, px: { md: 8 } }}>
           <Grid item md={6}>
             <Typography
               sx={{ typography: { xs: "h3", md: "h1" } }}
@@ -41,7 +41,7 @@ const Contact = () => {
               We're here
             </Typography>
             <Typography variant="h6" sx={{ mt: 2 }}>
-              One Door is Always open for a Good Chat.
+              Our Door is Always open for a Good Chat.
             </Typography>
             <AppointMent />
           </Grid>
@@ -63,8 +63,7 @@ const Contact = () => {
             <Stack direction="row" sx={{ alignItems: "center", mb: 3 }}>
               <LocationOn color="secondary" />
               <Typography variant="h6" sx={{ ml: 2 }}>
-                Dorfville Avenue, off Moniya Iseyin Road, Ijaye town Akinyele
-                LGA, Ibadan, Oyo state - Nigeria
+              No 1-10, Dorfville Farm Avenue, KM 42, Moniya-Iseyin Road, Ijaye, Akinyele LGA, Ibadan, Oyo State.
               </Typography>
             </Stack>
           </Grid>

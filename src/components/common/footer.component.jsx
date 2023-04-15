@@ -66,7 +66,7 @@ const Footer = () => {
           </IconButton>
         </Box>
         <Box>
-          <IconButton color="secondary" sx={{ px: 2 }}>
+          <IconButton color="secondary" sx={{ px: 2 }} href="https://www.linkedin.com/company/dorfville-farms/" target="_blank">
             <LinkedIn />
           </IconButton>
         </Box>

@@ -103,8 +103,7 @@ const Farmvisit = () => {
               color="grey"
               textTransform={"capitalize"}
               sx={{ mt: 2 }}>
-              Interested in joining a vibrant and dynamic team in a growing
-              agricultural company committed to innovative agricultural practice
+              Our Door is Always open for a Good Chat.
             </Typography>
           </Grid>
           <Grid item md={5} sx={{ position: "relative" }}>

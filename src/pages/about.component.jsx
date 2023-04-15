@@ -16,7 +16,6 @@ const About = () => {
       <Container
         sx={{
           position: "relative",
-          zIndex: -1,
           py: { xs: 10, md: 6 },
           backgroundColor: "#FAFAFA",
         }}
