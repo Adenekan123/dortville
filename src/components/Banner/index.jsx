@@ -38,7 +38,6 @@ const Banner = () => {
                 variant="h1"
                 className="animated-text"
                 sx={{
-                  textTransform: "capitalize",
                   typography: { xs: "h3", md: "h1" },
                   mb: 2,
                 }}>

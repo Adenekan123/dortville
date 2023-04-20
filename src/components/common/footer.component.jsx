@@ -9,7 +9,8 @@ const Footer = () => {
         py: 5,
         px: { xs: 0, md: 12 },
         backgroundColor: "#fff",
-      }}>
+      }}
+    >
       {/* <Stack
         direction="row"
         flexWrap="wrap"
@@ -46,13 +47,15 @@ const Footer = () => {
         flexWrap="wrap"
         justifyContent="center"
         alignItems="center"
-        sx={{ mt: 3 }}>
+        sx={{ mt: 3 }}
+      >
         <Box>
           <IconButton
             color="secondary"
             sx={{ px: 2 }}
             href="https://www.facebook.com/dorfvillefarm/"
-            target="_blank">
+            target="_blank"
+          >
             <Facebook />
           </IconButton>
         </Box>
@@ -61,12 +64,18 @@ const Footer = () => {
             color="secondary"
             sx={{ px: 2 }}
             href="https://twitter.com/DorfvilleFarms"
-            target="_blank">
+            target="_blank"
+          >
             <Twitter />
           </IconButton>
         </Box>
         <Box>
-          <IconButton color="secondary" sx={{ px: 2 }} href="https://www.linkedin.com/company/dorfville-farms/" target="_blank">
+          <IconButton
+            color="secondary"
+            sx={{ px: 2 }}
+            href="https://www.linkedin.com/company/dorfville-farms/"
+            target="_blank"
+          >
             <LinkedIn />
           </IconButton>
         </Box>
@@ -75,14 +84,14 @@ const Footer = () => {
             color="secondary"
             sx={{ px: 2 }}
             href="https://instagram.com/dorfville_farms?igshid=YmMyMTA2M2Y="
-            target="_blank">
+            target="_blank"
+          >
             <Instagram />
           </IconButton>
         </Box>
       </Stack>
       <Typography sx={{ textAlign: "center", mt: 2 }}>
-        &copy; {new Date().getFullYear()
-} Dorfville Farms | All Rights Reserved
+        &copy; {new Date().getFullYear()} Dorfville Farms | All Rights Reserved
       </Typography>
     </Paper>
   );

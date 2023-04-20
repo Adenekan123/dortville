@@ -129,7 +129,7 @@ const Farmvisit = () => {
                 valu={email}
               />
               <TextField
-                type="date"
+                type="datetime-local"
                 id="date"
                 name="date"
                 variant="outlined"

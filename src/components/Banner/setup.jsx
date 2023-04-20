@@ -17,33 +17,33 @@ export const imageUrls = [bg1, bg2, bg3];
 export const slidesContent = [
   {
     img: supply,
-    heroText: "Sales and supply of agricultural produce",
+    heroText: "Sales & Supply of Agricultural Produce",
     subtitle:
-      'Sales and supply of agricultural produce trusted by all customers; "Sellers to consumers" include small-scale farmers, food retailers (farm stores),',
+      'At Dorfville Farms, we sell, supply and deliver the fresh agricultural produce from the farm straight to our customers,',
   },
   {
     img: meat,
-    heroText: "Supply of Agricultural farm inputs and raw materials",
+    heroText: "Supply of Agricultural Inputs & Raw Materials",
     subtitle:
-      "Agricultural inputs and raw materials are essential in the production of goods and services in the agricultural sector. The two terms are often used interchangeably but they have different meanings.",
+      "Agricultural inputs and raw materials are essential in the production of goods and services in the agricultural sector. We resell of quality Agricultural inputs and raw materials from credible manufacturers and distributors",
   },
   {
     img: poultry,
-    heroText: "Poultry Consultancy and Poultry Equipment",
+    heroText: "Poultry Consultancy & Poultry Equipment",
     subtitle:
-      "Poultry Consultancy and Poultry Equipment, we educate customers about what kinds of fresh eggs they should buy.",
+      "With our team of seasoned and experienced poultry professionals, we provide consultancy services to both existing and intending poultry farmers to help them achieve success.",
   },
   {
     img: training,
-    heroText: "Agricultural Training and Consultancy Services",
+    heroText: "Agricultural Training & Consultancy Services",
     subtitle:
-      "Agricultural Training and Consultancy Services for our clients to help them with their farms, gardens or landscaping projects.",
+      "We provide knowledge transfer and competence building training  services in agricultural production to our clients.",
   },
   {
     img: husbandry,
     heroText: "Animal Husbandry Management",
     subtitle:
-      "Animal Husbandry Management, we produce fresh meat from our garden every month.",
+      "Animal Husbandry Management, we produce fresh meat from our garden every month.We provide consultancy services to help with setting up your livestock farm of improved breeds of of cows, sheep, and goats.",
   },
 ];
 
