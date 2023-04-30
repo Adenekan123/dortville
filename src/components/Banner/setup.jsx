@@ -19,31 +19,31 @@ export const slidesContent = [
     img: supply,
     heroText: "Sales & Supply of Agricultural Produce",
     subtitle:
-      'At Dorfville Farms, we sell, supply and deliver the fresh agricultural produce from the farm straight to our customers,',
+      'At Dorfville Farms, we sell, supply and deliver fresh agricultural produce from the farm straight to our customers.',
   },
   {
     img: meat,
     heroText: "Supply of Agricultural Inputs & Raw Materials",
     subtitle:
-      "Agricultural inputs and raw materials are essential in the production of goods and services in the agricultural sector. We resell of quality Agricultural inputs and raw materials from credible manufacturers and distributors",
+      "Agricultural inputs and raw materials are essential in the production of goods and services in the agricultural sector. We resell quality agricultural inputs and raw materials from credible manufacturers and distributor partners.",
   },
   {
     img: poultry,
     heroText: "Poultry Consultancy & Poultry Equipment",
     subtitle:
-      "With our team of seasoned and experienced poultry professionals, we provide consultancy services to both existing and intending poultry farmers to help them achieve success.",
+      "With our team of seasoned and experienced poultry professionals, we provide consultancy services to both existing and intending poultry farmers to help them achieve success in the poultry farming ventures.",
   },
   {
     img: training,
     heroText: "Agricultural Training & Consultancy Services",
     subtitle:
-      "We provide knowledge transfer and competence building training  services in agricultural production to our clients.",
+      "We provide knowledge transfer and competence building training services in agricultural production to our clients.",
   },
   {
     img: husbandry,
     heroText: "Animal Husbandry Management",
     subtitle:
-      "Animal Husbandry Management, we produce fresh meat from our garden every month.We provide consultancy services to help with setting up your livestock farm of improved breeds of of cows, sheep, and goats.",
+      "We provide consultancy services to help with setting up your livestock farm with improved breeds of of cows, sheep, and goats.",
   },
 ];
 
