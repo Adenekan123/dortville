@@ -1,11 +1,15 @@
 import React, { useState, useEffect } from "react";
 
-import { Paper, Grid, Typography } from "@mui/material";
+import { Paper, Grid, Typography, Button, Backdrop } from "@mui/material";
 import BlogCard from "../components/blogCard.component";
+import usePdfViewer from "../hooks/usePdfViewer";
+import { PictureAsPdf } from "@mui/icons-material";
+import ObjectViewer from "../components/object-viewer";
 
 const Blog = () => {
   const [posts, setPosts] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
+  const [file,setFile] = usePdfViewer(null);
 
   useEffect(() => {
     setIsLoading(true);
@@ -34,21 +38,28 @@ const Blog = () => {
           Our Farm Blog Posts
         </Typography>
       </Paper> */}
+        <Backdrop sx={{zIndex: (theme) => theme.zIndex.drawer + 1}} open={Boolean(file)} onClick={()=>setFile(null)}>
+        <ObjectViewer file={file} type="application/pdf" />
+    </Backdrop>
       <Paper sx={{ px: { xs: 3, md: 12 }, py: { xs: 3, md: 6 } }}>
         {isLoading ? <h4>Loading...</h4> : ""}
         <Grid container spacing={2}>
           {posts.map((post) => (
             <Grid item xs={12} md={6} lg={3} key={post._id}>
-              <BlogCard
-                src={`data:${post.image.contentType};base64,${post.image.data}`}
-                postid={post._id}>
-                <Typography gutterBottom variant="h5" component="div">
-                  {post.title}
-                </Typography>
-                <Typography variant="body2" color="text.secondary">
-                  {post.body.slice(0, 50) + "..."}
-                </Typography>
-              </BlogCard>
+              <BlogCard src={post.image.url} postid={post._id}>
+                    <Typography gutterBottom variant="h5" component="div">
+                      {post.title}
+                    </Typography>
+                    <Button
+                      onClick={()=>setFile(post.pdf.url)}
+                      fullWidth
+                      variant="outlined"
+                      color="secondary"
+                      startIcon={<PictureAsPdf />}
+                    >
+                      Continue Reading
+                    </Button>
+                  </BlogCard>
             </Grid>
           ))}
         </Grid>

@@ -3,14 +3,19 @@ import { NavLink } from "react-router-dom";
 import Fade from "react-reveal/Fade";
 import Pulse from "react-reveal/Pulse";
 
-import { Paper, Typography, Grid, Box, Button } from "@mui/material";
+import { Paper, Typography, Grid, Box, Button, Backdrop } from "@mui/material";
 import BlogCard from "./blogCard.component";
 
-import { ChevronRight } from "@mui/icons-material";
+import { ChevronRight, PictureAsPdf } from "@mui/icons-material";
+import ObjectViewer from "./object-viewer";
+import usePdfViewer from "../hooks/usePdfViewer";
 
 const LatestPost = () => {
   const [posts, setPosts] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
+  const [file,setFile] = usePdfViewer(null);
+
+
 
   useEffect(() => {
     setIsLoading(true);
@@ -28,6 +33,9 @@ const LatestPost = () => {
   }, []);
   return (
     <>
+    <Backdrop sx={{zIndex: (theme) => theme.zIndex.drawer + 1}} open={Boolean(file)} onClick={()=>setFile(null)}>
+        <ObjectViewer file={file} type="application/pdf" />
+    </Backdrop>
       {isLoading ? <h4>Loading...</h4> : ""}
       {posts.length ? (
         <Paper
@@ -36,28 +44,34 @@ const LatestPost = () => {
             py: { xs: 3, md: 6 },
             px: { xs: 3, md: 12 },
             backgroundColor: "#FAFAFA",
-          }}>
+          }}
+        >
           <Typography
             sx={{
               textAlign: "center",
               mb: 5,
               typography: { xs: "h4", md: "h3" },
-            }}>
+            }}
+          >
             Our Farm Blog
           </Typography>
           <Grid container spacing={3}>
             {posts.map((post) => (
               <Grid item xs={12} md={3} key={post.title}>
                 <Fade bottom>
-                  <BlogCard
-                    src={`data:${post.image.contentType};base64,${post.image.data}`}
-                    postid={post._id}>
+                  <BlogCard src={post.image.url} postid={post._id}>
                     <Typography gutterBottom variant="h5" component="div">
                       {post.title}
                     </Typography>
-                    <Typography variant="body2" color="text.secondary">
-                      {post.body.slice(0, 50) + "..."}
-                    </Typography>
+                    <Button
+                      onClick={()=>setFile(post.pdf.url)}
+                      fullWidth
+                      variant="outlined"
+                      color="secondary"
+                      startIcon={<PictureAsPdf />}
+                    >
+                      Continue Reading
+                    </Button>
                   </BlogCard>
                 </Fade>
               </Grid>
@@ -70,7 +84,8 @@ const LatestPost = () => {
                 to="/blog"
                 color="secondary"
                 variant="text"
-                endIcon={<ChevronRight />}>
+                endIcon={<ChevronRight />}
+              >
                 View all posts
               </Button>
             </Pulse>
