@@ -10,7 +10,6 @@ import {
   CardContent,
 } from "@mui/material";
 
-import Flip from "react-reveal/Flip";
 
 import { Link } from "@mui/icons-material";
 import { NavLink } from "react-router-dom";
@@ -43,7 +42,6 @@ const Specialities = () => {
 
       <Grid container spacing={2} justifyContent="center">
         <Grid item xs={12} md={3}>
-          <Flip bottom>
             <Card
               elevation={0}
               sx={{
@@ -78,11 +76,9 @@ const Specialities = () => {
                 <Link />
               </Box>
             </Card>
-          </Flip>
         </Grid>
 
         <Grid item xs={12} md={3}>
-          <Flip bottom>
             <Card
               elevation={0}
               sx={{
@@ -117,11 +113,9 @@ const Specialities = () => {
                 <Link />
               </Box>
             </Card>
-          </Flip>
         </Grid>
 
         <Grid item xs={12} md={3}>
-          <Flip bottom>
             <Card
               elevation={0}
               sx={{
@@ -160,10 +154,8 @@ const Specialities = () => {
                 <Link />
               </Box>
             </Card>
-          </Flip>
         </Grid>
         <Grid item xs={12} md={3}>
-          <Flip bottom>
             <Card
               elevation={0}
               sx={{
@@ -200,10 +192,8 @@ const Specialities = () => {
                 <Link />
               </Box>
             </Card>
-          </Flip>
         </Grid>
         <Grid item xs={12} md={6}>
-          <Flip bottom>
             <Card
               elevation={0}
               sx={{
@@ -244,7 +234,6 @@ const Specialities = () => {
                 <Link />
               </Box>
             </Card>
-          </Flip>
         </Grid>
       </Grid>
     </Paper>

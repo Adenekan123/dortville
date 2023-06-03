@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
-import Fade from "react-reveal/Fade";
-import Pulse from "react-reveal/Pulse";
+
 
 import { Paper, Typography, Grid, Box, Button, Backdrop } from "@mui/material";
 import BlogCard from "./blogCard.component";
@@ -34,7 +33,7 @@ const LatestPost = () => {
   return (
     <>
     <Backdrop sx={{zIndex: (theme) => theme.zIndex.drawer + 1}} open={Boolean(file)} onClick={()=>setFile(null)}>
-        <ObjectViewer file={file} type="application/pdf" />
+        <ObjectViewer setFile={setFile}  file={file} type="application/pdf" />
     </Backdrop>
       {isLoading ? <h4>Loading...</h4> : ""}
       {posts.length ? (
@@ -58,8 +57,7 @@ const LatestPost = () => {
           <Grid container spacing={3}>
             {posts.map((post) => (
               <Grid item xs={12} md={3} key={post.title}>
-                <Fade bottom>
-                  <BlogCard src={post.image.url} postid={post._id}>
+                 <BlogCard src={post.image.url} postid={post._id}>
                     <Typography gutterBottom variant="h5" component="div">
                       {post.title}
                     </Typography>
@@ -73,12 +71,10 @@ const LatestPost = () => {
                       Continue Reading
                     </Button>
                   </BlogCard>
-                </Fade>
               </Grid>
             ))}
           </Grid>
           <Box sx={{ textAlign: "center", mt: 8 }}>
-            <Pulse>
               <Button
                 component={NavLink}
                 to="/blog"
@@ -88,7 +84,6 @@ const LatestPost = () => {
               >
                 View all posts
               </Button>
-            </Pulse>
           </Box>
         </Paper>
       ) : (

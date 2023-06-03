@@ -1,5 +1,4 @@
 import React from "react";
-import Zoom from "react-reveal";
 
 import Banner from "../components/Banner/";
 import { Paper, Grid, Typography, Box } from "@mui/material";
@@ -15,7 +14,6 @@ const Home = () => {
   return (
     <>
       <Banner />
-      <Zoom bottom cascade>
         <Grid
           container
           columnSpacing={12}
@@ -110,7 +108,6 @@ const Home = () => {
             </Typography>
           </Grid>
         </Grid>
-      </Zoom>
 
       <Specialities />
       <LatestPost />
