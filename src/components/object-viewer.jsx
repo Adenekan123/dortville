@@ -29,7 +29,7 @@ const ObjectViewer = ({ file, setFile }) => {
         height: "100%",}}
       >
         {file && (
-          <Document file={file} onLoadSuccess={onDocumentLoadSuccess}>
+          <Document file={file} onLoadSuccess={onDocumentLoadSuccess} onLoadError={(error) => console.log("Inside Error", error)}>
             {Array(numPages)
               .fill()
               .map((_, i) => (
