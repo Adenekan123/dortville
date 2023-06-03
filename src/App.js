@@ -15,6 +15,8 @@ import Farmvisit from "./pages/farmvisit.component";
 
 import Header from "./components/common/header.component.jsx";
 import Footer from "./components/common/footer.component.jsx";
+
+
 function App() {
   return (
     <ThemeProvider theme={theme}>

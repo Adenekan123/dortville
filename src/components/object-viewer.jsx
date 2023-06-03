@@ -1,10 +1,14 @@
 // import Box from "@mui/material/Box";
 import { Box } from "@mui/material";
 import { useState } from "react";
-import { Document, Page } from "react-pdf/dist/esm/entry.webpack";
+import { Document, Page,pdfjs } from "react-pdf/dist/esm/entry.webpack";
 import "react-pdf/dist/esm/Page/AnnotationLayer.css";
 import "react-pdf/dist/esm/Page/TextLayer.css";
-import "react-pdf/dist/esm/Page/PageSVG.js";
+import pdfjsWorker from "react-pdf/dist/esm/pdf.worker.entry";
+
+pdfjs.GlobalWorkerOptions.workerSrc = pdfjsWorker;
+
+
 
 const ObjectViewer = ({ file, setFile }) => {
   // const isMobile = useMediaQuery('(max-width:600px)')
