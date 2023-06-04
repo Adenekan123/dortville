@@ -1,5 +1,5 @@
 // import Box from "@mui/material/Box";
-import { Box } from "@mui/material";
+import { Box, CircularProgress } from "@mui/material";
 import { useState } from "react";
 import { Document, Page,pdfjs } from "react-pdf/dist/esm/entry.webpack";
 import "react-pdf/dist/esm/Page/AnnotationLayer.css";
@@ -28,11 +28,11 @@ const ObjectViewer = ({ file, setFile }) => {
         height: "100%",}}
       >
         {file && (
-          <Document file={file} onLoadSuccess={onDocumentLoadSuccess} onLoadError={(error) => console.log("Inside Error", error)}>
+          <Document loading={<CircularProgress color="secondary"/>} file={file} onLoadSuccess={onDocumentLoadSuccess} onLoadError={(error) => console.log("Inside Error", error)}>
             {Array(numPages)
               .fill()
               .map((_, i) => (
-                <Page key={i} pageNumber={i + 1} />
+                <Page loading={<CircularProgress color="success"/>} key={i} pageNumber={i + 1} />
               ))}
           </Document>
         )}
