@@ -22,7 +22,7 @@ const BlogCard = ({ children, src, postid }) => {
         "&:hover .MuiBox-root": { height: "200px" },
       }}>
       <CardMedia component="img" alt="green iguana" height="200" image={src} />
-      <CardActions disableSpacing sx={{ justifyContent: "space-between" }}>
+      <CardActions disableSpacing sx={{ justifyContent: "space-between",m:0 }}>
         <Typography variant="caption" color="secondary.main">
           20-04-2022
         </Typography>
@@ -30,7 +30,7 @@ const BlogCard = ({ children, src, postid }) => {
           <Share />
         </IconButton>
       </CardActions>
-      <CardContent sx={{ position: "relative" }}>{children}</CardContent>
+      <CardContent sx={{ position: "relative",pt:0, }}>{children}</CardContent>
       
 
       <Box

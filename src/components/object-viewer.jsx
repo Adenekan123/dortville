@@ -21,7 +21,7 @@ const ObjectViewer = ({ file, setFile }) => {
   return (
     <Box sx={{ display: "flex", justifyContent: "center", overflowY: "auto",width: "100%",
     height: "100%",
-    overflowX: "hidden", }}>
+    }}>
       <Box
         onClick={() => setFile(null)}
         sx={{width: {xs:"100%",md:"auto"},

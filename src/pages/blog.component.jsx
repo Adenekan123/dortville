@@ -47,7 +47,7 @@ const Blog = () => {
           {posts.map((post) => (
             <Grid item xs={12} md={6} lg={3} key={post._id}>
               <BlogCard src={post.image.url} postid={post._id}>
-                    <Typography gutterBottom variant="h5" component="div">
+                    <Typography gutterBottom variant="h6" component="div">
                       {post.title}
                     </Typography>
                     <Button
@@ -56,6 +56,8 @@ const Blog = () => {
                       variant="outlined"
                       color="secondary"
                       startIcon={<PictureAsPdf />}
+                      sx={{mt:3}}
+
                     >
                       Continue Reading
                     </Button>
