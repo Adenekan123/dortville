@@ -1,10 +1,10 @@
 import React from "react";
 
-import { Container, Paper, Grid, Box, Typography } from "@mui/material";
+import { Container, Paper, Grid, Typography, Stack } from "@mui/material";
 
 import AppointMent from "../components/appointment.component";
 
-import { PhoneAndroid, Email } from "@mui/icons-material";
+import { PhoneAndroid, Email, LocationOn } from "@mui/icons-material";
 
 const Contact = () => {
   return (
@@ -12,13 +12,12 @@ const Contact = () => {
       <Container
         sx={{
           position: "relative",
-          pt: { xs: 15, md: 20 },
-          pb: 10,
+          p: { xs: 3, md: 8 },
           backgroundColor: "#FAFAFA",
         }}
         maxWidth="false">
-        <Box
-          sx={{
+        {/* <Box
+          sx={ {
             width: "270px",
             height: "270px",
             borderRadius: "50%",
@@ -28,54 +27,45 @@ const Contact = () => {
             top: "-90px",
             left: "-50px",
             backdropFilter: "blur(10px)",
-          }}></Box>
+          } }></Box> */}
 
         <Grid
           container
           justifyContent={"space-between"}
           alignItems="center"
-          sx={{ position: "relative", zIndex: 1, px: { md: 8 } }}>
+          sx={{ position: "relative", zIndex: 2, px: { md: 8 } }}>
           <Grid item md={6}>
             <Typography
               sx={{ typography: { xs: "h3", md: "h1" } }}
               textTransform={"capitalize"}>
               We're here
             </Typography>
-            <Typography
-              variant="h6"
-              textTransform={"capitalize"}
-              sx={{ mt: 2 }}>
-              One door is always open for a good cup of coffee.
+            <Typography variant="h6" sx={{ mt: 2 }}>
+              Our Door is Always open for a Good Chat.
             </Typography>
+            <AppointMent />
           </Grid>
           <Grid item md={5} sx={{ position: "relative" }}>
-            <AppointMent />
-            <Typography variant="h4" sx={{ textAlign: "center", my: 3 }}>
-              OR
-            </Typography>
-            <Grid
-              container
-              columnSpacing={2}
-              rowSpacing={4}
-              jusstifyContebt="center"
-              sx={{ textAlign: "center" }}>
-              <Grid item xs={12} md={6}>
-                <Box>
-                  <PhoneAndroid color="secondary" />
-                  <Typography variant="h6" sx={{ textAlign: "center" }}>
-                    +234 810 873 0632
-                  </Typography>
-                </Box>
-              </Grid>
-              <Grid item xs={12} md={6}>
-                <Box>
-                  <Email color="secondary" />
-                  <Typography variant="h6" sx={{ textAlign: "center" }}>
-                    dorfvillefarms@gmail.com
-                  </Typography>
-                </Box>
-              </Grid>
-            </Grid>
+            <Stack
+              direction="row"
+              sx={{ alignItems: "center", mb: 3, mt: { xs: 4, md: 0 } }}>
+              <PhoneAndroid color="secondary" />
+              <Typography variant="h6" sx={{ textAlign: "center", ml: 2 }}>
+                +234 810 873 0632
+              </Typography>
+            </Stack>
+            <Stack direction="row" sx={{ mb: 3, alignItems: "center" }}>
+              <Email color="secondary" />
+              <Typography variant="h6" sx={{ ml: 2 }}>
+                dorfvillefarms@gmail.com
+              </Typography>
+            </Stack>
+            <Stack direction="row" sx={{ alignItems: "center", mb: 3 }}>
+              <LocationOn color="secondary" />
+              <Typography variant="h6" sx={{ ml: 2 }}>
+              No 1-10, Dorfville Farm Avenue, KM 42, Moniya-Iseyin Road, Ijaye, Akinyele LGA, Ibadan, Oyo State.
+              </Typography>
+            </Stack>
           </Grid>
         </Grid>
       </Container>
@@ -83,9 +73,10 @@ const Contact = () => {
       <Paper
         elevation={0}
         sx={{
-          py: { xs: 0, md: 3 },
+          py: { xs: 0, md: 6 },
           px: { xs: 0, md: 12 },
           position: "relative",
+          backgroundColor: "#020350",
         }}>
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d253170.88378852958!2d3.73603125273021!3d7.487867388844086!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1039ee218ed50eb3%3A0xad8184fa103cb64d!2sAkinyele%20Local%20Government%20Area!5e0!3m2!1sen!2sng!4v1674895654210!5m2!1sen!2sng"

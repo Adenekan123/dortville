@@ -10,8 +10,9 @@ import {
 } from "@mui/material";
 
 import { Link, Share } from "@mui/icons-material";
+import { NavLink } from "react-router-dom";
 
-const BlogCard = ({ children, src }) => {
+const BlogCard = ({ children, src, postid }) => {
   return (
     <Card
       elevation={0}
@@ -21,8 +22,7 @@ const BlogCard = ({ children, src }) => {
         "&:hover .MuiBox-root": { height: "200px" },
       }}>
       <CardMedia component="img" alt="green iguana" height="200" image={src} />
-      <CardContent sx={{ position: "relative" }}>{children}</CardContent>
-      <CardActions disableSpacing sx={{ justifyContent: "space-between" }}>
+      <CardActions disableSpacing sx={{ justifyContent: "space-between",m:0 }}>
         <Typography variant="caption" color="secondary.main">
           20-04-2022
         </Typography>
@@ -30,8 +30,12 @@ const BlogCard = ({ children, src }) => {
           <Share />
         </IconButton>
       </CardActions>
+      <CardContent sx={{ position: "relative",pt:0, }}>{children}</CardContent>
+      
 
       <Box
+        component={NavLink}
+        to={`/blog/${postid}`}
         sx={{
           position: "absolute",
           top: "0",

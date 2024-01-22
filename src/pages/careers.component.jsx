@@ -1,20 +1,49 @@
-import React from "react";
-import { Container, Button, Paper, Grid, Box, Typography } from "@mui/material";
+import React, { useEffect, useState } from "react";
+import { Container, Button, Grid, Box, Typography, Paper } from "@mui/material";
 
 import farmer from "../assets//images/farmer.jpg";
 
 const Careers = () => {
+  const [selectedFile, setSelectedFile] = useState(null);
+  const [error, setError] = useState(false);
+  const [success, setSuccess] = useState(false);
+  const [uploading, setUploading] = useState(false);
+
+  const onFileChange = (e) => {
+    setSelectedFile(e.target.files[0]);
+  };
+
+  useEffect(() => {
+    if (selectedFile) {
+      setUploading(true);
+      const formData = new FormData();
+      formData.append("cv", selectedFile);
+      fetch(`${process.env.REACT_APP_API_URL}/career`, {
+        method: "POST",
+        body: formData,
+      })
+        .then((response) => {
+          if (response.ok) setSuccess(true);
+          else setError(true);
+          setUploading(false);
+        })
+        .catch((e) => {
+          console.log(e);
+          setUploading(false);
+          setError(true);
+        });
+    }
+  }, [selectedFile]);
   return (
     <>
       <Container
         sx={{
           position: "relative",
-          pt: { xs: 15, md: 20 },
-          pb: 10,
+          p: { xs: 5 },
           backgroundColor: "#FAFAFA",
         }}
         maxWidth="false">
-        <Box
+        {/* <Box
           sx={{
             width: "270px",
             height: "270px",
@@ -25,7 +54,7 @@ const Careers = () => {
             top: "-90px",
             left: "-50px",
             backdropFilter: "blur(10px)",
-          }}></Box>
+          }}></Box> */}
 
         <Grid
           container
@@ -47,6 +76,7 @@ const Careers = () => {
               Interested in joining a vibrant and dynamic team in a growing
               agricultural company committed to innovative agricultural practice
             </Typography>
+
             <Box>
               <Typography
                 variant="h4"
@@ -62,13 +92,29 @@ const Careers = () => {
                   color="secondary"
                   sx={{ py: 2 }}>
                   Upload File
-                  <input type="file" hidden />
+                  <input type="file" hidden onChange={onFileChange} />
                 </Button>
                 <Typography sx={{ display: "inline-block", pl: 2 }}>
                   *pdf,*word
                 </Typography>
               </Paper>
             </Box>
+            {success && (
+              <Typography sx={{ color: "green", fontWeight: "bold", mt: 2 }}>
+                CV uploaded, We will get back to you soon!
+              </Typography>
+            )}
+            {error && (
+              <Typography sx={{ color: "red", fontWeight: "bold", mt: 2 }}>
+                There was an error submitting your feedback. Please try again
+                later.
+              </Typography>
+            )}
+            {uploading && (
+              <Typography sx={{ color: "green", fontWeight: "bold", mt: 2 }}>
+                Uploading...
+              </Typography>
+            )}
           </Grid>
           <Grid
             item

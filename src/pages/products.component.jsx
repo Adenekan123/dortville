@@ -1,129 +1,309 @@
-import React from "react";
+import React, { useEffect } from "react";
 
-import GlassBg from "../components/glassBg.component";
-import AppointMent from "../components/appointment.component";
-import RadiusImageSection from "../components/radius-image-section.component";
+import {
+  Container,
+  Paper,
+  Grid,
+  Box,
+  Typography,
+  ImageList,
+  ImageListItem,
+} from "@mui/material";
 
-import VerifiedIcon from "@mui/icons-material/Verified";
+import { useParams } from "react-router-dom";
 
-import farmProduce from "../assets/images/banner-bg2.jpg";
+import fruits from "../assets/images/fruits.jpg";
+import training from "../assets/images/farmconsult.jpg";
+import animal from "../assets/images/animal.jpg";
+
+import crops from "../assets/images/crops.jpg";
+import poultry from "../assets/images/poultry.jpg";
+import rabbitry from "../assets/images/rabbitry.jpg";
 import husbandry from "../assets/images/husbandry.jpg";
 
-import { Grid, Stack, Typography, Paper, Box, Chip } from "@mui/material";
+import LatestPost from "../components/latestPost";
 
 const Products = () => {
+  const { id } = useParams();
+
+  useEffect(() => {
+    if (document.getElementById(id))
+      document.getElementById(id).scrollIntoView({ behavior: "smooth" });
+  }, [id]);
   return (
     <>
-      <Paper
-        elevation={0}
+      <Container
         sx={{
-          pt: { xs: 11, md: 17 },
-          pb: { xs: 5, md: 10 },
-          px: { xs: 3, md: 12 },
+          position: "relative",
+          pt: { xs: 6, zIndex: -1 },
+          pb: 6,
           backgroundColor: "#FAFAFA",
-        }}>
-        <GlassBg src={farmProduce}>
-          <Paper
-            elevation={0}
-            sx={{
-              maxWidth: { xs: "100%", md: "80%" },
-              mx: "auto",
-              backgroundColor: "transparent",
-            }}>
-            <Typography
-              sx={{ typography: { xs: "h4", md: "h2" } }}
-              color="primary">
-              Sales and Supply of Agricultural farm produce.
-            </Typography>
-          </Paper>
-        </GlassBg>
-        <Typography sx={{ mt: 4, textAlign: "justify" }}>
-          sheep, and cows as live animals, processed meat and dairy products for
-          healthy consumption. We supply and deliver livestock of different
-          breeds and sizes to meet our customers’ demands for everyday domestic
-          consumption, festivities, and party needs. Our livestock are well
-          nurtured, and grass fed with quality grass and legume species
-          cultivated on an irrigated land to ensure nutrient dense meat of the
-          highest quality
-        </Typography>
-      </Paper>
+        }}
+        maxWidth="false">
+        <Box
+          sx={{
+            width: "270px",
+            height: "270px",
+            borderRadius: "50%",
+            backgroundImage:
+              "linear-gradient(to right,rgba(168, 253, 99, 0.089),#b5fab51f)",
+            position: "absolute",
+            top: "-90px",
+            left: "-50px",
+            backdropFilter: "blur(10px)",
+          }}></Box>
 
-      <Paper elevation={0} sx={{ py: 10, px: { xs: 3, md: 12 } }}>
-        <Grid container rowSpacing={4} sx={{ justifyContent: "space-between" }}>
+        <Grid
+          container
+          justifyContent={"space-between"}
+          alignItems="center"
+          rowSpacing={4}
+          sx={{ position: "relative", zIndex: 1, px: { md: 8 } }}>
           <Grid item md={6}>
-            <Typography variant="h3">
-              Thousands of people trust our agricultural products
+            <Typography
+              sx={{ typography: { xs: "h3", md: "h1" } }}
+              textTransform={"capitalize"}>
+              Our Products
             </Typography>
-            <Typography variant="body1" color="grey" sx={{ mt: 2 }}>
-              Join the amazing farming that we provide for you and just for your
+            <Typography variant="h6" sx={{ mt: 2 }}>
+              We Produce, Process, Supply and Deliver Agricultural Produce.
             </Typography>
-            <Box
-              sx={{
-                bgcolor: "secondary.main",
-                p: 3,
-                mt: 5,
-                borderRadius: "22px",
-              }}>
-              <Stack direction="row">
-                <Box sx={{ mr: 4 }}>
-                  <Typography color="primary" variant="h6" marginBottom={1}>
-                    20,000+ Acers
-                  </Typography>
-                  <Typography variant="subtitle" color="#eee">
-                    Acres of land
-                  </Typography>
-                </Box>
-                <Box>
-                  <Typography color="primary" variant="h6" marginBottom={1}>
-                    10,000+ Farmers
-                  </Typography>
-                  <Typography variant="subtitle" color="#eee">
-                    Acres of land
-                  </Typography>
-                </Box>
-                <VerifiedIcon
-                  color="primary"
-                  sx={{
-                    ml: "auto",
-                    fontSize: "80px",
-                    textShadow: "0px 20px 25px rgba(0,0,0,0.8)",
-                  }}
-                />
-              </Stack>
-            </Box>
-            <AppointMent />
           </Grid>
           <Grid
             item
-            md={4}
-            sx={{ position: "relative", order: { xs: -1, md: "initial" } }}>
-            <RadiusImageSection src={husbandry} direction="right" />
-            <Paper
-              elevation={0}
-              sx={{
-                position: "absolute",
-                top: "50%",
-                left: { xs: "50%", md: "-60px" },
-                transform: "translateY(-60%)",
-                backgroundColor: "transparent",
-              }}>
-              <Chip
-                sx={{
-                  backgroundColor: "#e0e0e07f",
-                  color: "#fff",
-                  backdropFilter: "blur(5px)",
-                  fontSize: "1rem",
-                  fontWeight: "bold",
-                  px: 4,
-                  py: 4,
-                  boxShadow: "0px 15px 25px rgba(0,0,0,10%) ",
-                }}
-                label="Join Us"
-              />
-            </Paper>
+            md={5}
+            sx={{ position: "relative", order: { xs: "-1", md: "1" } }}>
+            <ImageList variant="woven" cols={3} gap={8}>
+              <ImageListItem>
+                <img
+                  src={`${training}?w=161&fit=crop&auto=format`}
+                  srcSet={`${training}?w=161&fit=crop&auto=format&dpr=2 2x`}
+                  alt={"about1"}
+                  loading="lazy"
+                />
+              </ImageListItem>
+              <ImageListItem>
+                <img
+                  src={`${fruits}?w=161&fit=crop&auto=format`}
+                  srcSet={`${fruits}?w=161&fit=crop&auto=format&dpr=2 2x`}
+                  alt={"about1"}
+                  loading="lazy"
+                />
+              </ImageListItem>
+              <ImageListItem>
+                <img
+                  src={`${poultry}?w=161&fit=crop&auto=format`}
+                  srcSet={`${poultry}?w=161&fit=crop&auto=format&dpr=2 2x`}
+                  alt={"about1"}
+                  loading="lazy"
+                />
+              </ImageListItem>
+              <ImageListItem>
+                <img
+                  src={`${rabbitry}?w=161&fit=crop&auto=format`}
+                  srcSet={`${rabbitry}?w=161&fit=crop&auto=format&dpr=2 2x`}
+                  alt={"about1"}
+                  loading="lazy"
+                />
+              </ImageListItem>
+              <ImageListItem>
+                <img
+                  src={`${animal}?w=161&fit=crop&auto=format`}
+                  srcSet={`${animal}?w=161&fit=crop&auto=format&dpr=2 2x`}
+                  alt={"about1"}
+                  loading="lazy"
+                />
+              </ImageListItem>
+            </ImageList>
           </Grid>
         </Grid>
-      </Paper>
+      </Container>
+
+      <Grid
+        container
+        justifyContent={"space-between"}
+        alignItems={"center"}
+        sx={{
+          px: { xs: 3, md: 12 },
+          py: { xs: 3, md: 6 },
+          rowGap: { xs: 4, md: 0 },
+        }}>
+        <Grid
+          item
+          md={6}
+          sx={{
+            height: "100%!important",
+            pr: { xs: 0, md: 4 },
+            order: { xs: "2", md: "0" },
+            "& #heading": { textAlign: "cemter" },
+          }}>
+          <Paper elevation={0} sx={{ textAlign: { xs: "center", md: "left" } }}>
+            <Typography
+              sx={{ typography: { xs: "h4", md: "h3" } }}
+              color="tertiary"
+              id="heading">
+              Crop Production
+            </Typography>
+          </Paper>
+
+          <Typography
+            variant="body1"
+            lineHeight={2}
+            sx={{ mt: 3, textAlign: "justify" }}>
+            With over 20 acres of irrigated arable land, we farm and produce all
+            varieties of food crops such as Maize, Cowpeas, Cassava, Yam, all
+            year round
+          </Typography>
+        </Grid>
+
+        <Grid item md={6} sx={{ order: { xs: "1", md: "0" } }} id="crops">
+          <img src={crops} alt="cow" width="100%" height="100%" />
+        </Grid>
+
+        <Grid
+          item
+          md={6}
+          sx={{ order: { xs: "3", md: "0" }, pt: { xs: 4, md: 0 } }}
+          id="poultry">
+          <img src={poultry} alt="cow" width="100%" height="100%" />
+        </Grid>
+        <Grid
+          item
+          md={6}
+          sx={{
+            height: "100%!important",
+            order: { xs: "4", md: "0" },
+            pl: { xs: 0, md: 4 },
+            "& #heading": { textAlign: "cemter" },
+          }}>
+          <Paper elevation={0} sx={{ textAlign: { xs: "center", md: "left" } }}>
+            <Typography
+              sx={{ typography: { xs: "h4", md: "h3" } }}
+              color="tertiary"
+              id="heading">
+              Poultry Faming
+            </Typography>
+          </Paper>
+
+          <Typography
+            variant="body1"
+            lineHeight={2}
+            sx={{ mt: 3, textAlign: "justify" }}>
+            Our poultry farm produces quality eggs and healthy eggs and healthy
+            poultry meat to satisfy our customer’s daily and commercial needs
+            commercial needs.
+          </Typography>
+        </Grid>
+        <Grid
+          item
+          md={6}
+          sx={{
+            height: "100%!important",
+            order: { xs: "6", md: "0" },
+            pr: { xs: 0, md: 4 },
+            "& #heading": { textAlign: "cemter" },
+          }}>
+          <Paper elevation={0} sx={{ textAlign: { xs: "center", md: "left" } }}>
+            <Typography
+              sx={{ typography: { xs: "h4", md: "h3" } }}
+              color="tertiary"
+              id="heading">
+              Rabbitry Farming
+            </Typography>
+          </Paper>
+
+          <Typography
+            variant="body1"
+            lineHeight={2}
+            sx={{ mt: 3, textAlign: "justify" }}>
+            We breed and supply exotic breeds of rabbit for breeding and meat to
+            cater to our customer’s meat needs both for their domestic
+            consumption and party needs.
+          </Typography>
+        </Grid>
+        <Grid
+          item
+          md={6}
+          sx={{ order: { xs: "5", md: "0" }, pt: { xs: 4, md: 0 } }}
+          id="rabitry">
+          <img src={rabbitry} alt="cow" width="100%" height="100%" />
+        </Grid>
+        <Grid
+          item
+          md={6}
+          sx={{ order: { xs: "7", md: "0" }, pt: { xs: 4, md: 0 } }}
+          id="vegetable">
+          <img
+            src={fruits}
+            alt="Fruits and vegetables"
+            width="100%"
+            height="100%"
+          />
+        </Grid>
+        <Grid
+          item
+          md={6}
+          sx={{
+            height: "100%!important",
+            order: { xs: "8", md: "0" },
+            pl: { xs: 0, md: 4 },
+            "& #heading": { textAlign: "cemter" },
+          }}>
+          <Paper elevation={0} sx={{ textAlign: { xs: "center", md: "left" } }}>
+            <Typography
+              sx={{ typography: { xs: "h4", md: "h3" } }}
+              color="tertiary"
+              id="heading">
+              Fruit and Vegetable Farming
+            </Typography>
+          </Paper>
+
+          <Typography
+            variant="body1"
+            lineHeight={2}
+            sx={{ mt: 3, textAlign: "justify" }}>
+            At Dorfville farms, we grow, and supply varieties of fresh fruits
+            and vegetables harvested at the peak of their freshness and ripeness
+            to ensure highest nutrient quality.
+          </Typography>
+        </Grid>
+        <Grid
+          item
+          md={6}
+          sx={{
+            height: "100%!important",
+            order: { xs: "10", md: "0" },
+            pr: { xs: 0, md: 4 },
+            "& #heading": { textAlign: "cemter" },
+          }}>
+          <Paper elevation={0} sx={{ textAlign: { xs: "center", md: "left" } }}>
+            <Typography
+              sx={{ typography: { xs: "h4", md: "h3" } }}
+              color="tertiary"
+              id="heading">
+              Livestock Farming & Animal Husbandry
+            </Typography>
+          </Paper>
+
+          <Typography
+            variant="body1"
+            lineHeight={2}
+            sx={{ mt: 3, textAlign: "justify" }}>
+            We breed and supply exotic breeds of rabbit for breeding and meat to
+            cater to our customer’s meat needs both for their domestic
+            consumption and party needs.
+          </Typography>
+        </Grid>
+        <Grid
+          item
+          md={6}
+          sx={{ order: { xs: "9", md: "0" }, pt: { xs: 4, md: 0 } }}
+          id="rabitry">
+          <img src={husbandry} alt="cow" width="100%" height="100%" />
+        </Grid>
+      </Grid>
+
+      <LatestPost />
     </>
   );
 };

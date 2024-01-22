@@ -4,7 +4,6 @@ import {
   Box,
   AppBar,
   Toolbar,
-  Typography,
   Button,
   Menu,
   MenuItem,
@@ -13,24 +12,22 @@ import {
   useTheme,
 } from "@mui/material";
 
-// import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
+import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
+import OpenInNewIcon from "@mui/icons-material/OpenInNew";
 
 import MenuDrawer from "./menuDrawer.component";
 
 import logo from "../../assets/images/logo1.png";
-import farmtools from "../../assets/icons/farmtools.png";
-import poultry from "../../assets/icons/poultry.png";
-import husbandry from "../../assets/icons/husbandary.png";
-import consultant from "../../assets/icons/training.png";
-import supply from "../../assets/icons/supply.png";
+
 const Header = () => {
   const [navBg, setNavBg] = useState(false);
 
   const [menuAnchor, setMenuAnchor] = useState(null);
   const open = Boolean(menuAnchor);
-  // const handleClick = (event) => {
-  //   setMenuAnchor(event.currentTarget);
-  // };
+
+  const handleClick = (event) => {
+    setMenuAnchor(event.currentTarget);
+  };
 
   const handleClose = () => {
     setMenuAnchor(null);
@@ -38,6 +35,10 @@ const Header = () => {
 
   const theme = useTheme();
   const matchMobile = useMediaQuery(theme.breakpoints.down("md"));
+
+  const goOut = () => {
+    window.open("https://thevillagemarket.shop/");
+  };
 
   const changeNavBg = () => {
     window.scrollY >= 100 ? setNavBg(true) : setNavBg(false);
@@ -52,7 +53,11 @@ const Header = () => {
     <AppBar
       component="nav"
       elevation={0}
-      sx={{ backgroundColor: "transparent" }}>
+      position="static"
+      sx={{
+        backgroundColor: "transparent",
+        zIndex: 10,
+      }}>
       <Toolbar
         sx={{
           justifyContent: "space-between",
@@ -74,12 +79,14 @@ const Header = () => {
               backgroundColor: navBg ? "#ffffffe1" : "transparent",
               backdropFilter: navBg ? "blur(5px)" : "none",
             }}>
-            <img
-              src={logo}
-              alt="logo"
-              height={navBg ? "50px" : "100px"}
-              style={{ transition: ".2s " }}
-            />
+            <Box component={NavLink} to="/">
+              <img
+                src={logo}
+                alt="logo"
+                height={navBg ? "50px" : "70px"}
+                style={{ transition: ".2s " }}
+              />
+            </Box>
             <Box sx={{ width: "auto" }}>
               <Button
                 component={NavLink}
@@ -90,13 +97,10 @@ const Header = () => {
                 sx={{ mr: 3 }}>
                 Home
               </Button>
-              {/* <Button
+              <Button
                 component={NavLink}
-                style={({ isActive }) =>
-                  isActive ? { color: "#313DAD" } : { color: "inherit" }
-                }
-                to="/services"
-                id="services-menu"
+                to="#"
+                id="services-button"
                 color={"tertiary"}
                 aria-controls={open ? "services-menu" : undefined}
                 aria-haspopup="true"
@@ -104,8 +108,8 @@ const Header = () => {
                 onClick={handleClick}
                 sx={{ mr: 3 }}
                 endIcon={<KeyboardArrowDownIcon />}>
-                Services
-              </Button> */}
+                What we Do
+              </Button>
               <Button
                 component={NavLink}
                 style={({ isActive }) =>
@@ -115,16 +119,6 @@ const Header = () => {
                 color={"tertiary"}
                 sx={{ mr: 3 }}>
                 About
-              </Button>
-              <Button
-                component={NavLink}
-                style={({ isActive }) =>
-                  isActive ? { color: "#313DAD" } : { color: "inherit" }
-                }
-                to="/services"
-                color={"tertiary"}
-                sx={{ mr: 3 }}>
-                Services
               </Button>
               <Button
                 component={NavLink}
@@ -142,121 +136,60 @@ const Header = () => {
                   isActive ? { color: "#313DAD" } : { color: "inherit" }
                 }
                 to="/careers"
-                color={"tertiary"}>
+                color={"tertiary"}
+                sx={{ mr: 3 }}>
                 Careers
+              </Button>
+              <Button
+                component={NavLink}
+                style={({ isActive }) =>
+                  isActive ? { color: "#313DAD" } : { color: "inherit" }
+                }
+                to="/blog"
+                color={"tertiary"}
+                sx={{ mr: 3 }}>
+                Blog
+              </Button>
+              <Button
+                onClick={goOut}
+                color="tertiary"
+                endIcon={<OpenInNewIcon />}>
+                Farm Shop
               </Button>
             </Box>
           </Stack>
         )}
 
-        <Menu anchorEl={menuAnchor} open={open} onClose={handleClose}>
+        <Menu
+          id="services-menu"
+          anchorEl={menuAnchor}
+          open={open}
+          onClose={handleClose}
+          MenuListProps={{
+            "aria-labelledby": "services-button",
+          }}>
           <MenuItem onClick={handleClose}>
-            <Box
-              sx={{
-                backgroundColor: "#eee",
-                width: "40px",
-                height: "40px",
-                borderRadius: "50%",
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-                mr: 1,
-              }}>
-              <img src={supply} alt="supplies" width={"25px"} />
-            </Box>
-            <Typography>Sales and supply of agricultural produce</Typography>
+            <Button
+              color="tertiary"
+              component={NavLink}
+              to="/services"
+              style={({ isActive }) =>
+                isActive ? { color: "#313DAD" } : { color: "inherit" }
+              }>
+              Services
+            </Button>
           </MenuItem>
 
           <MenuItem onClick={handleClose}>
-            <Box
-              sx={{
-                backgroundColor: "#eee",
-                width: "40px",
-                height: "40px",
-                borderRadius: "50%",
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-                mr: 1,
-              }}>
-              <img
-                src={farmtools}
-                alt="supplies"
-                width={"25px"}
-                height={"25px"}
-              />
-            </Box>
-            <Typography>
-              Supply of Agricultural farm inputs and raw materials
-            </Typography>
-          </MenuItem>
-
-          <MenuItem onClick={handleClose}>
-            <Box
-              sx={{
-                backgroundColor: "#eee",
-                width: "40px",
-                height: "40px",
-                borderRadius: "50%",
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-                mr: 1,
-              }}>
-              <img
-                src={poultry}
-                alt="supplies"
-                width={"25px"}
-                height={"25px"}
-              />
-            </Box>
-            <Typography>Poultry Consultancy and Poultry Equipment</Typography>
-          </MenuItem>
-
-          <MenuItem onClick={handleClose}>
-            <Box
-              sx={{
-                backgroundColor: "#eee",
-                width: "40px",
-                height: "40px",
-                borderRadius: "50%",
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-                mr: 1,
-              }}>
-              <img
-                src={husbandry}
-                alt="supplies"
-                width={"25px"}
-                height={"25px"}
-              />
-            </Box>
-            <Typography>Animal Husbandry Management</Typography>
-          </MenuItem>
-
-          <MenuItem onClick={handleClose}>
-            <Box
-              sx={{
-                backgroundColor: "#eee",
-                width: "40px",
-                height: "40px",
-                borderRadius: "50%",
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-                mr: 1,
-              }}>
-              <img
-                src={consultant}
-                alt="supplies"
-                width={"25px"}
-                height={"25px"}
-              />
-            </Box>
-            <Typography>
-              Agricultural Training and Consultancy Services
-            </Typography>
+            <Button
+              color="tertiary"
+              component={NavLink}
+              to="/products"
+              style={({ isActive }) =>
+                isActive ? { color: "#313DAD" } : { color: "inherit" }
+              }>
+              Products
+            </Button>
           </MenuItem>
         </Menu>
       </Toolbar>

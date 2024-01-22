@@ -1,30 +1,14 @@
 import React from "react";
-import BlogCard from "../components/blogCard.component";
-import {
-  Container,
-  Paper,
-  Grid,
-  Box,
-  Typography,
-  Button,
-  ImageList,
-  ImageListItem,
-} from "@mui/material";
+import { Container, Paper, Grid, Box, Typography } from "@mui/material";
 
 import AppointMent from "../components/appointment.component";
+import Specialities from "../components/specialities.component";
+import LatestPost from "../components/latestPost";
 
-import about from "../assets/images/about.jpg";
+import about from "../assets/images/banner-bg4.jpg";
 import about2 from "../assets/images/about2.jpg";
-import about3 from "../assets/images/about3.jpg";
 import about4 from "../assets/images/about4.jpg";
-import joinUsImage from "../assets/images/banner-bg4.jpg";
-import ourStoryImage from "../assets/images/banner-bg5.jpg";
-import crops from "../assets/images/crops.jpg";
-import poultry from "../assets/images/poultry.jpg";
-import husbandry from "../assets/images/husbandry.jpg";
-import rabbitry from "../assets/images/rabbitry.jpg";
-
-import { ChevronRight } from "@mui/icons-material";
+import joinUsImage from "../assets/images/husbandry.jpg";
 
 const About = () => {
   return (
@@ -32,12 +16,11 @@ const About = () => {
       <Container
         sx={{
           position: "relative",
-          pt: { xs: 15, md: 20 },
-          pb: 10,
+          py: { xs: 10, md: 6 },
           backgroundColor: "#FAFAFA",
         }}
         maxWidth="false">
-        <Box
+        {/* <Box
           sx={{
             width: "270px",
             height: "270px",
@@ -48,7 +31,7 @@ const About = () => {
             top: "-90px",
             left: "-50px",
             backdropFilter: "blur(10px)",
-          }}></Box>
+          }}></Box> */}
 
         <Grid
           container
@@ -66,7 +49,7 @@ const About = () => {
               variant="h6"
               textTransform={"capitalize"}
               sx={{ mt: 2 }}>
-              We produce,process,supply and deliver Agricultural Produce.
+              We produce, process, supply and deliver Agricultural Produce.
             </Typography>
 
             <AppointMent />
@@ -75,56 +58,19 @@ const About = () => {
             item
             md={5}
             sx={{ position: "relative", order: { xs: "-1", md: "1" } }}>
-            <ImageList variant="woven" cols={3} gap={8}>
-              <ImageListItem>
-                <img
-                  src={`${about}?w=161&fit=crop&auto=format`}
-                  srcSet={`${about}?w=161&fit=crop&auto=format&dpr=2 2x`}
-                  alt={"about1"}
-                  loading="lazy"
-                />
-              </ImageListItem>
-              <ImageListItem>
-                <img
-                  src={`${about2}?w=161&fit=crop&auto=format`}
-                  srcSet={`${about2}?w=161&fit=crop&auto=format&dpr=2 2x`}
-                  alt={"about1"}
-                  loading="lazy"
-                />
-              </ImageListItem>
-              <ImageListItem>
-                <img
-                  src={`${about3}?w=161&fit=crop&auto=format`}
-                  srcSet={`${about3}?w=161&fit=crop&auto=format&dpr=2 2x`}
-                  alt={"about1"}
-                  loading="lazy"
-                />
-              </ImageListItem>
-              <ImageListItem>
-                <img
-                  src={`${about4}?w=161&fit=crop&auto=format`}
-                  srcSet={`${about4}?w=161&fit=crop&auto=format&dpr=2 2x`}
-                  alt={"about1"}
-                  loading="lazy"
-                />
-              </ImageListItem>
-              <ImageListItem>
-                <img
-                  src={`${ourStoryImage}?w=161&fit=crop&auto=format`}
-                  srcSet={`${ourStoryImage}?w=161&fit=crop&auto=format&dpr=2 2x`}
-                  alt={"about1"}
-                  loading="lazy"
-                />
-              </ImageListItem>
-              <ImageListItem>
-                <img
-                  src={`${husbandry}?w=161&fit=crop&auto=format`}
-                  srcSet={`${husbandry}?w=161&fit=crop&auto=format&dpr=2 2x`}
-                  alt={"about1"}
-                  loading="lazy"
-                />
-              </ImageListItem>
-            </ImageList>
+            <Grid container spacing={1}>
+              <Box
+                component="img"
+                src={about}
+                alt="about 1"
+                sx={{
+                  display: "inline-block",
+                  width: "100%",
+                  borderRadius: "5px",
+                  objectFit: "cover",
+                }}
+              />
+            </Grid>
           </Grid>
         </Grid>
       </Container>
@@ -134,16 +80,29 @@ const About = () => {
         columnSpacing={12}
         rowSpacing={3}
         justifyContent={"center"}
-        sx={{ p: { xs: 3, md: 12, textAlign: "center" } }}>
-        <Grid item md={8}>
-          <Paper elevation={0}>
-            <Typography
-              sx={{ typography: { xs: "h4", md: "h3" } }}
-              color="tertiary"
-              id="heading">
-              Our Story
-            </Typography>
-          </Paper>
+        alignItems={"center"}
+        sx={{
+          px: { xs: 3, md: 12 },
+          py: { xs: 3, md: 5 },
+          textAlign: "justify",
+          backgroundColor: "#020350",
+          color: "#FFFF",
+        }}>
+        <Grid item md={6}>
+          <Box
+            component="img"
+            src={joinUsImage}
+            alt="Cow face"
+            sx={{ width: "100%" }}
+          />
+        </Grid>
+        <Grid item md={6}>
+          <Typography
+            sx={{ typography: { xs: "h4", md: "h3" } }}
+            color="tertiary"
+            id="heading">
+            Our Farm Story
+          </Typography>
 
           <Typography variant="body1" lineHeight={2} sx={{ mt: 3 }}>
             Dorfville Agricultural Production Limited is a 360° agricultural
@@ -160,7 +119,7 @@ const About = () => {
         rowSpacing={3}
         justifyContent={"space-between"}
         alignItems={"center"}
-        sx={{ p: { xs: 3, md: 12 } }}>
+        sx={{ px: { xs: 3, md: 12 }, py: { xs: 3, md: 6 } }}>
         <Grid
           item
           md={6}
@@ -198,7 +157,7 @@ const About = () => {
 
       <Paper
         elevation={0}
-        sx={{ py: 10, px: { xs: 3, md: 12 }, backgroundColor: "#FAFAFA" }}>
+        sx={{ py: 6, px: { xs: 3, md: 12 }, backgroundColor: "#FAFAFA" }}>
         <Container sx={{ textAlign: "center", mb: 8 }} maxWidth="lg">
           <Typography sx={{ mb: 1, typography: { xs: "h4", md: "h3" } }}>
             The Farm
@@ -225,192 +184,7 @@ const About = () => {
         </Box>
       </Paper>
 
-      <Paper elevation={0} sx={{ py: 10, px: { xs: 3, md: 12 } }}>
-        <Container sx={{ textAlign: "center", mb: 8 }} maxWidth="md">
-          <Typography sx={{ mb: 1, typography: { xs: "h4", md: "h3" } }}>
-            Our featured products
-          </Typography>
-          <Typography variant="body1" color="grey" sx={{ lineHeight: 2 }}>
-            We make use of renewable energy in all our farm operations as much
-            as possible and ensuring that all wastes generated at the farm are
-            recycled and reused on the farm.
-          </Typography>
-        </Container>
-
-        <Grid container spacing={2} justifyContent="center">
-          <Grid item md={3}>
-            <Paper
-              elevation={0}
-              sx={{
-                pt: 5,
-                px: 4,
-                textAlign: "center",
-                boxShadow: "0px 20px 25px rgba(0,0,0,4%)",
-                borderRadius: "30px",
-                minHeight: "300px",
-              }}>
-              <Box>
-                <img
-                  src={crops}
-                  alt="imag1"
-                  width="80px"
-                  height="80px"
-                  style={{ borderRadius: "20px", objectFit: "cover" }}
-                />
-              </Box>
-              <Box>
-                <Typography variant="h6" sx={{ my: 2 }}>
-                  Crop Production
-                </Typography>
-                <Typography variant="body2" color="grey" sx={{ lineHeight: 2 }}>
-                  With over 20 acres of irrigated arable land, we farm and
-                  produce all varieties of food crops such as Maize, Cowpeas,
-                  Cassava, Yam, all year round
-                </Typography>
-              </Box>
-            </Paper>
-          </Grid>
-          <Grid item md={3}>
-            <Paper
-              elevation={0}
-              sx={{
-                pt: 5,
-                px: 4,
-                textAlign: "center",
-                boxShadow: "0px 20px 25px rgba(0,0,0,4%)",
-                borderRadius: "30px",
-                minHeight: "300px",
-              }}>
-              <Box>
-                <img
-                  src={husbandry}
-                  alt="imag1"
-                  width="80px"
-                  height="80px"
-                  style={{ borderRadius: "20px", objectFit: "cover" }}
-                />
-              </Box>
-              <Box>
-                <Typography variant="h6" sx={{ my: 2 }}>
-                  Livestock Farming and Animal Husbandry
-                </Typography>
-                <Typography variant="body2" color="grey" sx={{ lineHeight: 2 }}>
-                  At Dorfville Farms, we breed quality varieties of goat, sheep,
-                  and cows as live animals, processed and dairy products.
-                </Typography>
-              </Box>
-            </Paper>
-          </Grid>
-          <Grid item md={3}>
-            <Paper
-              elevation={0}
-              sx={{
-                pt: 5,
-                px: 4,
-                textAlign: "center",
-                boxShadow: "0px 20px 25px rgba(0,0,0,4%)",
-                borderRadius: "30px",
-                minHeight: "300px",
-              }}>
-              <Box>
-                <img
-                  src={poultry}
-                  alt="imag1"
-                  width="80px"
-                  height="80px"
-                  style={{ borderRadius: "20px", objectFit: "cover" }}
-                />
-              </Box>
-              <Box>
-                <Typography variant="h6" sx={{ my: 2 }}>
-                  Poultry Faming
-                </Typography>
-                <Typography variant="body2" color="grey" sx={{ lineHeight: 2 }}>
-                  Our poultry farm produces quality eggs and healthy eggs and
-                  healthy poultry meat to satisfy our customer’s daily and
-                  commercial needs commercial needs.
-                </Typography>
-              </Box>
-            </Paper>
-          </Grid>
-          <Grid item md={3}>
-            <Paper
-              elevation={0}
-              sx={{
-                pt: 5,
-                px: 4,
-                textAlign: "center",
-                boxShadow: "0px 20px 25px rgba(0,0,0,4%)",
-                borderRadius: "30px",
-                minHeight: "300px",
-              }}>
-              <Box>
-                <img
-                  src={rabbitry}
-                  alt="imag1"
-                  width="80px"
-                  height="80px"
-                  style={{ borderRadius: "20px", objectFit: "cover" }}
-                />
-              </Box>
-              <Box>
-                <Typography variant="h6" sx={{ my: 2 }}>
-                  Rabbitry Farming
-                </Typography>
-                <Typography variant="body2" color="grey" sx={{ lineHeight: 2 }}>
-                  We breed and supply exotic breeds of rabbit for breeding and
-                  meat to cater to our customer’s meat needs both for their
-                  domestic consumption and party needs.
-                </Typography>
-              </Box>
-            </Paper>
-          </Grid>
-          <Grid item md={6}>
-            <Paper
-              elevation={0}
-              sx={{
-                pt: 5,
-                px: 4,
-                pb: 4,
-                textAlign: "center",
-                boxShadow: "0px 20px 25px rgba(0,0,0,4%)",
-                borderRadius: "30px",
-                minHeight: "300px",
-              }}>
-              <Box>
-                <img
-                  src={crops}
-                  alt="imag1"
-                  width="80px"
-                  height="80px"
-                  style={{ borderRadius: "20px", objectFit: "cover" }}
-                />
-              </Box>
-              <Box>
-                <Typography variant="h6" sx={{ my: 2 }}>
-                  Fruit and Vegetable Farming
-                </Typography>
-                <Typography
-                  variant="body2"
-                  color="grey"
-                  sx={{ lineHeight: 2, mb: 2 }}>
-                  At Dorfville farms, we grow, and supply varieties of fresh
-                  fruits and vegetables harvested at the peak of their freshness
-                  and ripeness to ensure highest nutrient quality.
-                </Typography>
-                <Typography variant="body2" color="grey" sx={{ lineHeight: 2 }}>
-                  Our fruit and vegetables farms spans over 3 acres producing
-                  nutrient dense vegetables such as quality tomatoes, chilli
-                  pepper, Capsicum, Cucumber Watermelons, Cabbage, Lettuce,
-                  Green beans, spring onions, Peas, Spinach, Mint leaves, that
-                  are harvested twice a week to ensure constant supply of fresh
-                  produce to our esteemed customers.
-                </Typography>
-              </Box>
-            </Paper>
-          </Grid>
-        </Grid>
-      </Paper>
+      <Specialities />
 
       {/* <Paper elevation={0} sx={{ py: 10, px: { xs: 3, md: 12 } }}>
         <Grid container rowSpacing={4} sx={{ justifyContent: "space-between" }}>
@@ -489,69 +263,7 @@ const About = () => {
         </Grid>
       </Paper> */}
 
-      <Paper
-        elevation={0}
-        sx={{ py: { xs: 3, md: 10 }, px: { xs: 3, md: 12 } }}>
-        <Typography
-          sx={{
-            typography: { xs: "h4", md: "h3" },
-            textAlign: "center",
-            mb: 5,
-          }}>
-          Latest Blog Posts
-        </Typography>
-        <Grid container spacing={3}>
-          <Grid item md={3}>
-            <BlogCard src={joinUsImage}>
-              <Typography gutterBottom variant="h5" component="div">
-                Lizard
-              </Typography>
-              <Typography variant="body2" color="text.secondary">
-                Lizards are a widespread group of squamate reptiles, with over
-                6,000 species, ranging across all continents except Antarctica
-              </Typography>
-            </BlogCard>
-          </Grid>
-          <Grid item md={3}>
-            <BlogCard src={poultry}>
-              <Typography gutterBottom variant="h5" component="div">
-                Lizard
-              </Typography>
-              <Typography variant="body2" color="text.secondary">
-                Lizards are a widespread group of squamate reptiles, with over
-                6,000 species, ranging across all continents except Antarctica
-              </Typography>
-            </BlogCard>
-          </Grid>
-          <Grid item md={3}>
-            <BlogCard src={husbandry}>
-              <Typography gutterBottom variant="h5" component="div">
-                Lizard
-              </Typography>
-              <Typography variant="body2" color="text.secondary">
-                Lizards are a widespread group of squamate reptiles, with over
-                6,000 species, ranging across all continents except Antarctica
-              </Typography>
-            </BlogCard>
-          </Grid>
-          <Grid item md={3}>
-            <BlogCard src={rabbitry}>
-              <Typography gutterBottom variant="h5" component="div">
-                Lizard
-              </Typography>
-              <Typography variant="body2" color="text.secondary">
-                Lizards are a widespread group of squamate reptiles, with over
-                6,000 species, ranging across all continents except Antarctica
-              </Typography>
-            </BlogCard>
-          </Grid>
-        </Grid>
-        <Box sx={{ textAlign: "center", mt: 8 }}>
-          <Button color="secondary" variant="text" endIcon={<ChevronRight />}>
-            View all posts
-          </Button>
-        </Box>
-      </Paper>
+      <LatestPost />
     </>
   );
 };
